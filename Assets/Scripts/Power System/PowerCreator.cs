@@ -30,7 +30,7 @@ namespace PowerSystem
 		{
 			this.name = name;
 			this.description = description;
-			this.affectedFieldSetters = affectedFieldSetters;
+			this.affectedFieldSetters = affectedFieldSetters;			
 		}
 
 		public void SetParameters()
