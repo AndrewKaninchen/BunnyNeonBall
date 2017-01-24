@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Character" Collapsed="true">
+    <Position X="15.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACQAAAipAiBQEAIgTAACAAAAIAAAgAAAAIAACIAgAEA=</HashCode>
+      <FileName>Assets\Scripts\Power System\Character.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerGeneratorAttribute" Collapsed="true">
+    <Position X="10.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\PowerSystemManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystemManager" Collapsed="true">
+    <Position X="17.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\PowerSystemManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ParameterSetterPanelManager" Collapsed="true">
+    <Position X="17.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAgAAQgAAAAoAAAAAAAAACAAAAAgAEAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\UI\ParameterSetterPanelManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyEventSystem" Collapsed="true">
+    <Position X="13.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAACAA=</HashCode>
+      <FileName>Assets\Scripts\Quebra Galho\MyEventSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Rolling" Collapsed="true">
+    <Position X="12" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAEAAQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Quebra Galho\Rolling.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Spawner" Collapsed="true">
+    <Position X="13.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Quebra Galho\Spawner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.Effect" Collapsed="true">
+    <Position X="3" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\Effect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.AddForce" Collapsed="true">
+    <Position X="0.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\Effects\AddForce.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.Damage" Collapsed="true">
+    <Position X="3" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\Effects\Damage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.Destroy" Collapsed="true">
+    <Position X="5.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\Effects\Destroy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.PowerController" Collapsed="true">
+    <Position X="1.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\PowerController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.PowerInfo" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAEEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\PowerInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.PowerInfoGenerator&lt;PowerInfoType&gt;" Collapsed="true">
+    <Position X="6.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQABAAAAAAAAAAAAAAAAAAAAAAAECAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\PowerInfoGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.MetaParameter" Collapsed="true">
+    <Position X="12" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAIAAAAAAAAQAEAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\PowerInfoGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.JumpController" Collapsed="true">
+    <Position X="0.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQIAAAAAiAAABAEAAAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\Powers\Jump\JumpController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.JumpInfo" Collapsed="true">
+    <Position X="0.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAE=</HashCode>
+      <FileName>Assets\Scripts\Power System\Powers\Jump\JumpInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.JumpInfoGenerator" Collapsed="true">
+    <Position X="7.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAQAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\Powers\Jump\JumpInfoGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.Beam" Collapsed="true">
+    <Position X="13.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAQACAAoAAAAoQECAAgQAAAIAQAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\Powers\Shoot\Beam.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.ShootBeamController" Collapsed="true">
+    <Position X="2.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQQAAAAACAAJBAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\Powers\Shoot\ShootBeamController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.ShootBeamInfo" Collapsed="true">
+    <Position X="5.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\Powers\Shoot\ShootBeamInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.ShootBeamInfoGenerator" Collapsed="true">
+    <Position X="5.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\Powers\Shoot\ShootBeamInfoGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.ShootInfo" Collapsed="true">
+    <Position X="4" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAACAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\Powers\Shoot\ShootInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.ShootController" Collapsed="true">
+    <Position X="2.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\Powers\Shoot\ShootInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.ShootProjectileInfo" Collapsed="true">
+    <Position X="3" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\Powers\Shoot\ShootProjectileInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.UI.AddNewPowerDropdownManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAIAAQAAAAAAAAACAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\UI\AddNewPowerDropdownManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PowerSystem.UI.AddNewPowerPanelManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAgACABAAIAAQAAAAAAAACCAACAAAAAAEEAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\UI\AddNewPowerPanelManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PowerSystem.UI.CharacterPanelManager" Collapsed="true">
+    <Position X="17.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAmAAAQAQAAAABgAACAAAAAAAIEAAABABAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\UI\CharacterPanelManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.UI.MainPanelManager" Collapsed="true">
+    <Position X="10.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAACAAAAAAAAAAAAAAAAEAAAAAAAsAAAAUAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\UI\MainPanelManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.UI.NamePanelManager" Collapsed="true">
+    <Position X="15.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\UI\NamePanelManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.UI.PowerListPanelManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AARAAAAAAAYAAQAAAAAAICCAAAAAAAAAAAAABCAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\UI\PowerListPanelManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PowerSystem.UI.PowerPanelManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQ0ACABgAQAAQAAAAAAAACAAAAAAAAAAAQAAAAEABA=</HashCode>
+      <FileName>Assets\Scripts\Power System\UI\PowerPanelManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PowerSystem.UI.PowerParameterPanelManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="15.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAgCAABAAAASAAAAAABACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\UI\PowerParameterPanelManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PowerSystem.UI.PreviewPanelManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIIQAQAAAAAAAICAAAAAAAAEAAAAAAAAQQg=</HashCode>
+      <FileName>Assets\Scripts\Power System\UI\PreviewPanelManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

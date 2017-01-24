@@ -1,0 +1,38 @@
+﻿using UnityEngine;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Reflection;
+using System.Linq;
+
+namespace PowerSystem
+{
+	public abstract class PowerCreator<PowerInfoType> where PowerInfoType : Power
+	{
+		public static string name;
+		public static string description;
+		public Stat[] stats;
+		protected PowerInfoType powerInfo;
+		public PowerInfoType Info { get { return powerInfo; } }
+	}
+
+	public class Stat
+	{
+		public string name;
+		public string description;
+		public int rating;
+		public Action<int> affectedFieldSetters;
+
+		public Stat(string name, Action<int> affectedFieldSetters, string description)
+		{
+			this.name = name;
+			this.description = description;
+			this.affectedFieldSetters = affectedFieldSetters;
+		}
+
+		public void SetParameters()
+		{
+			affectedFieldSetters(rating);
+		}
+	}
+}

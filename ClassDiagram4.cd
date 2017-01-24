@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PowerSystem.Powers.JumpPower" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAE=</HashCode>
+      <FileName>Assets\Scripts\Power System\Powers\Jump\JumpPower.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.Powers.JumpPowerController" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQIAAAAAiAAABAEAAAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\Powers\Jump\JumpPowerController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.Powers.JumpPowerCreator" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAQAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\Powers\Jump\JumpPowerCreator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.Powers.Beam" Collapsed="true">
+    <Position X="6" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAQACAAoAAAAoQECAAgQAAAIAQAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\Powers\Ranged Attack\Beam.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.Powers.ShootBeamPowerController" Collapsed="true">
+    <Position X="6.75" Y="2.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAQQAAAAACAAJBAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\Powers\Ranged Attack\RangedAttackBeamController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.Powers.RangedAttackBeamPower" Collapsed="true">
+    <Position X="6.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\Powers\Ranged Attack\RangedAttackBeamPower.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.Powers.RangedAttackBeamPowerCreator" Collapsed="true">
+    <Position X="4.5" Y="3.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\Powers\Ranged Attack\RangedAttackBeamPowerCreator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.Powers.RangedAttackProjectilePower" Collapsed="true">
+    <Position X="6.25" Y="1.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\Powers\Ranged Attack\RangedAttackProjectilePower.cs</FileName>
+      <NewMemberFileName>Assets\Scripts\Power System\Powers\Ranged Attack\RangedAttackPower.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.Powers.RangedAttackPowerController" Collapsed="true">
+    <Position X="4.5" Y="2.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\Powers\Ranged Attack\RangedAttackPower.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.Powers.RangedAttackPower" Collapsed="true">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAACAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\Powers\Ranged Attack\RangedAttackPower.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
