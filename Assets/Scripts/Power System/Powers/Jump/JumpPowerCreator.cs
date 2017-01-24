@@ -14,8 +14,8 @@ namespace PowerSystem.Powers
 			powerInfo = ScriptableObject.CreateInstance<JumpPower>();
 			stats = new Stat[]
 			{
-				new Stat("Magnitude", SetJumpForce /*ou*/ /* rating => powerInfo.jumpForce = rating * 500 */, "How big is the jump."),
-				new Stat("Amount", SetJumpAmount /*ou*/ /* rating => powerInfo.jumpAmount = rating */, "How many jumps the character can do before having to reach ground again.")
+				new Stat<int>("Magnitude", "How big is the jump.", SetJumpForce /*ou*/ /* rating => powerInfo.jumpForce = rating * 500 */),
+				new Stat<int>("Amount", "How many jumps the character can do before having to reach ground again.", SetJumpAmount /*ou*/ /* rating => powerInfo.jumpAmount = rating */)
 			};
 		}
 

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using Utilities;
+using System;
 
 namespace PowerSystem.UI
 {
@@ -13,9 +14,11 @@ namespace PowerSystem.UI
 		private MyEventSystem eventSystem;
 		private EventTrigger eventTrigger;
 		private GameObject powerPanel;
+		private ParameterSetterPanelManager parameterSetterPanelManager;
+
 
 		public GameObject parameterSetterPanelPrefab;
-        private ParameterSetterPanelManager parameterSetterPanelManager;
+        //private IntParameterSetterPanelManager parameterSetterPanelManager;
 
 		public void Initialize (MyEventSystem eventSystem, GameObject powerPanel, Stat parameter)
 		{
@@ -23,9 +26,25 @@ namespace PowerSystem.UI
 			this.powerPanel = powerPanel;
 
 			transform.FindChild("Parameter Name").GetComponent<Text>().text = parameter.name;
-			parameterSetterPanelManager = (Instantiate(parameterSetterPanelPrefab, transform) as GameObject).GetComponent<ParameterSetterPanelManager>();
-			
-			parameterSetterPanelManager.Initialize(1, 10, 1);
+						
+			Type genericParameterType = parameter.GetType().GetGenericArguments()[0];			
+
+			if (genericParameterType == typeof(int))
+			{
+				GameObject g = Instantiate(parameterSetterPanelPrefab, transform) as GameObject;
+				parameterSetterPanelManager =  g.AddComponent<IntParameterSetterPanelManager>();				
+				parameterSetterPanelManager.Initialize(1, 10, 1);
+			}
+			else if (genericParameterType == typeof(bool))
+			{
+
+			}
+			else if (genericParameterType.IsEnum)
+			{
+				GameObject g = Instantiate(parameterSetterPanelPrefab, transform) as GameObject;
+				parameterSetterPanelManager = g.AddComponent<EnumParameterSetterPanelManager>();
+				((EnumParameterSetterPanelManager)parameterSetterPanelManager).Initialize(genericParameterType);
+			}
 		}
 
 		public void OnCancel(BaseEventData eventData)
@@ -37,13 +56,15 @@ namespace PowerSystem.UI
 
 		public void OnMove (AxisEventData eventData)
 		{
-			Debug.Log(this + "  OnMove");
-			parameterSetterPanelManager.ParameterValue += 
-			(
-				eventData.moveDir == MoveDirection.Right? 1:
-				eventData.moveDir == MoveDirection.Left? -1:
-				0
-			);
+			if (parameterSetterPanelManager.isActiveAndEnabled)
+			{
+				parameterSetterPanelManager.ParameterValue +=
+				(
+					eventData.moveDir == MoveDirection.Right ? 1 :
+					eventData.moveDir == MoveDirection.Left ? -1 :
+					0
+				);
+			}
 		}
 	}
 }

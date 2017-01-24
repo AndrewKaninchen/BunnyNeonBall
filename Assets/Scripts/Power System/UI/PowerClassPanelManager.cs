@@ -12,7 +12,6 @@ namespace PowerSystem.UI
 	public class PowerClassPanelManager : MonoBehaviour, IMoveHandler, ISubmitHandler, ICancelHandler
 	{
 		MyEventSystem eventSystem;
-		private RectTransform rectTransform;
 		private ScrollRect powerClassListScrollRect;
 		private RectTransform powerClassListPanelRectTransform;
 		private GameObject powerClassListPanel;
@@ -27,7 +26,6 @@ namespace PowerSystem.UI
 		public void Initialize(CharacterPanelManager characterPanelManager, int classID, string className, string classDescription)
 		{
 			eventSystem = GetComponentInParent<MyEventSystem>();
-			rectTransform = GetComponent<RectTransform>();
 			powerClassListScrollRect = GetComponentInParent<ScrollRect>();			
 			powerClassListPanel = characterPanelManager.powerClassListPanel;
 			powerClassListPanelManager = powerClassListPanel.GetComponent<PowerClassListPanelManager>();

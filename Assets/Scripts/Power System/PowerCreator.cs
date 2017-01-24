@@ -16,14 +16,17 @@ namespace PowerSystem
 		public PowerInfoType Info { get { return powerInfo; } }
 	}
 
-	public class Stat
+	public abstract class Stat
 	{
 		public string name;
 		public string description;
-		public int rating;
-		public Action<int> affectedFieldSetters;
+	}
+	public class Stat<T> : Stat
+	{		
+		public T value;
+		public Action<T> affectedFieldSetters;
 
-		public Stat(string name, Action<int> affectedFieldSetters, string description)
+		public Stat(string name, string description, Action<T> affectedFieldSetters)
 		{
 			this.name = name;
 			this.description = description;
@@ -32,7 +35,7 @@ namespace PowerSystem
 
 		public void SetParameters()
 		{
-			affectedFieldSetters(rating);
+			affectedFieldSetters(value);
 		}
 	}
 }

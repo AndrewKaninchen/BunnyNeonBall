@@ -17,8 +17,6 @@ namespace PowerSystem.UI
 		public Sprite spriteAButton;
 		public Sprite spriteBButton;
 
-		private RectTransform rectTransform;
-
 		public GameObject parameterPanelPrefab;
 
 		private ScrollRect powerListScrollRect;
@@ -30,7 +28,6 @@ namespace PowerSystem.UI
 		public void Initialize<PowerType> (PowerCreator<PowerType> powerCreator, PowerListPanelManager powerListPanelManager) where PowerType : Power
 		{
 			eventSystem = GetComponentInParent<MyEventSystem>();
-			rectTransform = GetComponent<RectTransform>();
 			powerListScrollRect = GetComponentInParent<ScrollRect>();
 			powerListPanelRectTransform = transform.parent.parent.GetComponent<RectTransform>();
 			this.powerListPanelManager = powerListPanelManager;
@@ -45,28 +42,10 @@ namespace PowerSystem.UI
 				GameObject parameterPanel = Instantiate(parameterPanelPrefab, transform.FindChild("Parameters Panel")) as GameObject;
 				parameterPanel.GetComponent<PowerParameterPanelManager>().Initialize(eventSystem, gameObject, parameter);
 
-				parameterPanels.Add(parameterPanel);
-				SetParameterNavigation(parameterPanels.Count - 1);
+				parameterPanels.Add(parameterPanel);				
 			}
 
-		}
-
-		public void SetParameterNavigation(int id)
-		{
-			Selectable sel = parameterPanels[id].GetComponent<Selectable>();
-			Navigation navi = new Navigation();
-			navi.mode = Navigation.Mode.Explicit;
-
-			if (id != 0)
-			{
-				Selectable sel2 = parameterPanels[id - 1].GetComponent<Selectable>();
-                Navigation navi2 = sel2.navigation;
-                navi.selectOnUp = sel2;
-				navi2.selectOnDown = sel;
-				sel2.navigation = navi2;
-            }
-			sel.navigation = navi;
-		}
+		}	
 
 		public void OnToggle(bool data)
 		{

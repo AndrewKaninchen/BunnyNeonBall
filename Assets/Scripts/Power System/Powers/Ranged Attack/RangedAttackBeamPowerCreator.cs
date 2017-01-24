@@ -8,36 +8,15 @@ namespace PowerSystem.Powers
 	{
 		public static new string name = "Shoot (Beam)";
 		public static new string description = "Shoots a Beam. Obviously.";
+		
 		public RangedAttackBeamPowerCreator()
 		{
 			powerInfo = ScriptableObject.CreateInstance<RangedAttackBeamPower>();
 			stats = new Stat[]
 			{
-				new Stat("Range", rating => powerInfo.range = rating, "How far the beam goes."),				
+				new Stat<int>("Range", "How far the beam goes.", value => powerInfo.range = value),
+				new Stat<Direction>("Direction", "Direction of fire", value => powerInfo.direction = value)
 			};
-		}
-	}
-}
-
-
-namespace PowerSystem.Powers
-{
-	public class RangedAttackBeamPowerCreator2 : PowerCreator2<RangedAttackBeamPower>
-	{
-		public static new string name = "Shoot (Beam)";
-		public static new string description = "Shoots a Beam. Obviously.";
-		public RangedAttackBeamPowerCreator2()
-		{
-			powerInfo = ScriptableObject.CreateInstance<RangedAttackBeamPower>();
-			stats = new Stat[]
-			{
-				new Stat("Range", rating => powerInfo.range = rating, "How far the beam goes."),
-			};
-		}
-
-		public override RangedAttackBeamPower CreatePower()
-		{
-			throw new NotImplementedException();
 		}
 	}
 }

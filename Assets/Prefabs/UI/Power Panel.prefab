@@ -101,6 +101,7 @@ GameObject:
   - component: {fileID: 114000010589088474}
   - component: {fileID: 114000011894335084}
   - component: {fileID: 114000013283084348}
+  - component: {fileID: 114403932074671714}
   m_Layer: 5
   m_Name: Parameters Panel
   m_TagString: Untagged
@@ -654,6 +655,20 @@ MonoBehaviour:
   m_PreferredHeight: 0
   m_FlexibleWidth: 1
   m_FlexibleHeight: 1
+--- !u!114 &114403932074671714
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012295657884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab8862a0392ef314894ed73e65ac9501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSystem: {fileID: 0}
+  mode: 0
+  childrenExitTarget: {fileID: 114000011115511340}
 --- !u!114 &114920631379646772
 MonoBehaviour:
   m_ObjectHideFlags: 1

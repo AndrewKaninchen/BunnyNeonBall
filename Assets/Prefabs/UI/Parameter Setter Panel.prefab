@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 224000011191910176}
   - component: {fileID: 114000013742335770}
   - component: {fileID: 114000012981938156}
-  - component: {fileID: 114000011837658588}
   m_Layer: 5
   m_Name: Parameter Setter Panel
   m_TagString: Untagged
@@ -46,18 +45,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &114000011837658588
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010212559558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96362dc5a5fe2164eacb315d8e69fd35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  valueText: {fileID: 114000013892873338}
 --- !u!114 &114000012981938156
 MonoBehaviour:
   m_ObjectHideFlags: 1

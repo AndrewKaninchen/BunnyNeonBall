@@ -8,7 +8,7 @@ namespace PowerSystem.Powers
 	{
 		public float rateOfFire;
 		public int amount;
-		public RangedAttackPowerController.Direction direction;
+		public Direction direction;
 		public enum SpreadType
 		{
 			Cone,
@@ -17,26 +17,26 @@ namespace PowerSystem.Powers
 		
 	}
 
+	public enum Direction
+	{
+		Right,
+		Left,
+		Up,
+		Down,
+		UpRight,
+		UpLeft,
+		DownRight,
+		DownLeft,
+		Analog1,
+		Analog2,
+		DPad,
+		Velocity,
+		Crosshair
+	}
+
 	public class RangedAttackPowerController : PowerController
 	{
-		protected Character character;
-
-		public enum Direction
-		{
-			Right,
-			Left,
-			Up,
-			Down,
-			UpRight,
-			UpLeft,
-			DownRight,
-			DownLeft,
-			Analog1,
-			Analog2,
-			DPad,
-			Velocity,
-			Crosshair
-		}
+		protected Character character;	
 
 		public Vector2 GetFireDirection(Direction direction)
 		{

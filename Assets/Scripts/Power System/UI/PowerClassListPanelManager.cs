@@ -12,7 +12,7 @@ namespace PowerSystem.UI
 	public class PowerClassListPanelManager : MonoBehaviour, ISubmitHandler
 	{
 		public PowerListPanelManager powerListPowerManager;
-		private MyEventSystem eventSystem;		
+		private MyEventSystem eventSystem;
 				
 		[HideInInspector]	public	List<GameObject> powerClassPanels;
 		[SerializeField]	private	GameObject powerClassPanelPrefab;

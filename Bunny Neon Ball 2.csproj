@@ -89,7 +89,6 @@
     <Compile Include="Assets\Scripts\Power System\Power.cs" />
     <Compile Include="Assets\Scripts\Power System\PowerController.cs" />
     <Compile Include="Assets\Scripts\Power System\PowerCreator.cs" />
-    <Compile Include="Assets\Scripts\Power System\PowerCreator2.cs" />
     <Compile Include="Assets\Scripts\Power System\PowerSystemManager.cs" />
     <Compile Include="Assets\Scripts\Power System\Powers\Jump\JumpPower.cs" />
     <Compile Include="Assets\Scripts\Power System\Powers\Jump\JumpPowerController.cs" />
@@ -104,6 +103,8 @@
     <Compile Include="Assets\Scripts\Power System\UI\AddNewPowerPanelManager.cs" />
     <Compile Include="Assets\Scripts\Power System\UI\AddNewPowerPanelManager2.cs" />
     <Compile Include="Assets\Scripts\Power System\UI\CharacterPanelManager.cs" />
+    <Compile Include="Assets\Scripts\Power System\UI\EnumParameterSetterPanelManager.cs" />
+    <Compile Include="Assets\Scripts\Power System\UI\IntParameterSetterPanelManager.cs" />
     <Compile Include="Assets\Scripts\Power System\UI\MainPanelManager.cs" />
     <Compile Include="Assets\Scripts\Power System\UI\MoveScrollRect.cs" />
     <Compile Include="Assets\Scripts\Power System\UI\NamePanelManager.cs" />
