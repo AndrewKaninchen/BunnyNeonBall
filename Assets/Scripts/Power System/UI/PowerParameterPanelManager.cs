@@ -45,6 +45,10 @@ namespace PowerSystem.UI
 				parameterSetterPanelManager = g.AddComponent<EnumParameterSetterPanelManager>();
 				((EnumParameterSetterPanelManager)parameterSetterPanelManager).Initialize(genericParameterType);
 			}
+			else if (genericParameterType == typeof(Effect))
+			{
+
+			}
 		}
 
 		public void OnCancel(BaseEventData eventData)

@@ -4,18 +4,21 @@ using UnityEngine;
 using UnityEditor;
 using UnityEngine.UI;
 
-
-[CustomEditor(typeof (HierarchyNavigationElement))]
-public class HierarchyNavigationElementEditor : Editor
+namespace Utilities
 {
-	public override void OnInspectorGUI()
+	[CustomEditor(typeof(HierarchyNavigationElement))]
+	public class HierarchyNavigationElementEditor : Editor
 	{
-		HierarchyNavigationElement myTarget = (HierarchyNavigationElement)target;
-		myTarget.overrideExitTarget = EditorGUILayout.Toggle("Override Exit Target", myTarget.overrideExitTarget);
-		if(myTarget.overrideExitTarget)
+		public override void OnInspectorGUI()
 		{
-			myTarget.exitTarget = (Selectable)EditorGUILayout.ObjectField("Exit Target", myTarget.exitTarget, typeof(Selectable));
-			//myTarget.exitTo = EditorGUILayout.
+			HierarchyNavigationElement myTarget = (HierarchyNavigationElement)target;
+			myTarget.overrideExitTarget = EditorGUILayout.Toggle("Override Exit Target", myTarget.overrideExitTarget);
+			if (myTarget.overrideExitTarget)
+			{
+
+				myTarget.exitTarget = (Selectable)EditorGUILayout.ObjectField("Exit Target", target, typeof(Selectable), true);
+				//myTarget.exitTo = EditorGUILayout.
+			}
 		}
 	}
 }

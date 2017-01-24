@@ -5,46 +5,50 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System;
 
-[ExecuteInEditMode]
-[RequireComponent(typeof(Selectable))]
-public class HierarchyNavigationElement : MonoBehaviour, ICancelHandler
+
+namespace Utilities
 {
-	private EventSystem eventSystem;
-	private HierarchyNavigationGroup group;
-	public bool overrideExitTarget = false;
-	public Selectable exitTarget;
-
-	void OnEnable()
+	[ExecuteInEditMode]
+	[RequireComponent(typeof(Selectable))]
+	public class HierarchyNavigationElement : MonoBehaviour, ICancelHandler
 	{
-		if(transform.parent != null)
-			group = transform.parent.GetComponent<HierarchyNavigationGroup>();
-		if (group != null)
+		private EventSystem eventSystem;
+		private HierarchyNavigationGroup group;
+		public bool overrideExitTarget = false;
+		public Selectable exitTarget;
+
+		void OnEnable()
 		{
-			eventSystem = group.eventSystem;
-			if (!overrideExitTarget)
-				exitTarget = group.childrenExitTarget;
-		}
-	}
-
-	void OnTransformParentChanged ()
-	{
-		OnEnable();		
-	}
-
-	public void OnCancel(BaseEventData eventData)
-	{
-		if (!overrideExitTarget)
-		{
-			if (group == null)
-				OnEnable();
+			if (transform.parent != null)
+				group = transform.parent.GetComponent<HierarchyNavigationGroup>();
 			if (group != null)
-				if (group.childrenExitTarget != null)
-					eventSystem.SetSelectedGameObject(group.childrenExitTarget.gameObject);
+			{
+				eventSystem = group.eventSystem;
+				if (!overrideExitTarget)
+					exitTarget = group.childrenExitTarget;
+			}
 		}
-		else
+
+		void OnTransformParentChanged()
 		{
-			if(exitTarget != null)
-				eventSystem.SetSelectedGameObject(exitTarget.gameObject);
+			OnEnable();
+		}
+
+		public void OnCancel(BaseEventData eventData)
+		{
+			if (!overrideExitTarget)
+			{
+				if (group == null)
+					OnEnable();
+				if (group != null)
+					if (group.childrenExitTarget != null)
+						eventSystem.SetSelectedGameObject(group.childrenExitTarget.gameObject);
+			}
+			else
+			{
+				if (exitTarget != null)
+					eventSystem.SetSelectedGameObject(exitTarget.gameObject);
+			}
 		}
 	}
 }
