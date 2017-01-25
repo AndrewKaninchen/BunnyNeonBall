@@ -10,27 +10,13 @@ namespace PowerSystem.Effects
 	{
 		public float magnitude;
 
-		public override void Apply(GameObject target, Vector2 direction)
+		public override void Trigger(GameObject target = null, GameObject perpetrator = null, params object[] additionalParameters)
 		{
+			Vector2 direction = (Vector2)additionalParameters[0];
 			Rigidbody2D obj;
 			obj = target.GetComponent<Rigidbody2D>();
 			if (obj != null)
 				obj.AddForce(magnitude * direction);
-		}
-
-		public override void Apply(GameObject target)
-		{
-			Apply(target, Vector3.one);
-		}
-
-		public override void Apply(GameObject target, GameObject aplier)
-		{
-			Apply(target, Vector3.one);
-		}
-
-		public override void Apply(GameObject target, GameObject aplier, Vector2 direction)
-		{
-			Apply(target, direction);
 		}
 	}
 }

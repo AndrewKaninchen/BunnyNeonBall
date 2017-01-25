@@ -102,7 +102,7 @@ namespace PowerSystem.Powers
 						{
 							if (character.playerID == playerID)
 								continue;
-							if (!hasAppliedEffect) { effect.Apply(h.collider.gameObject, owner.gameObject, direction); hasAppliedEffect = true; }
+							if (!hasAppliedEffect) { effect.Trigger(target: h.collider.gameObject, perpetrator: owner.gameObject, additionalParameters: direction); hasAppliedEffect = true; }
 
 							return h.point;
 						}
@@ -113,7 +113,7 @@ namespace PowerSystem.Powers
 					}
 					else
 					{
-						if (!hasAppliedEffect) { effect.Apply(h.collider.gameObject, owner.gameObject, direction); hasAppliedEffect = true; }
+						if (!hasAppliedEffect) { effect.Trigger(target : h.collider.gameObject, perpetrator: owner.gameObject, additionalParameters: direction); hasAppliedEffect = true; }
 						return h.point;
 					}
 				}

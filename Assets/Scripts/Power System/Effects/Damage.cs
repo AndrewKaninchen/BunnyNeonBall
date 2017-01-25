@@ -8,27 +8,12 @@ namespace PowerSystem.Effects
 	public class Damage : Effect
 	{
 		public float amount;
-		public override void Apply(GameObject gameObject)
+		public override void Trigger(GameObject target = null, GameObject perpetrator = null, params object[] additionalParameters)
 		{
 			Character obj;
-			obj = gameObject.GetComponent<Character>();
+			obj = target.GetComponent<Character>();
 			if(obj!=null)
 				obj.Damage(amount);
-		}
-
-		public override void Apply(GameObject target, Vector2 direction)
-		{
-			Apply(target);
-		}
-
-		public override void Apply(GameObject target, GameObject aplier)
-		{
-			Apply(target);
-		}
-
-		public override void Apply(GameObject target, GameObject aplier, Vector2 direction)
-		{
-			Apply(target);
 		}
 	}
 }

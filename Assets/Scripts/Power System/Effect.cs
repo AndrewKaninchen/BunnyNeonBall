@@ -6,9 +6,14 @@ namespace PowerSystem
 {	
 	public abstract class Effect : ScriptableObject
 	{
-		public abstract void Apply(GameObject target, GameObject aplier, Vector2 direction);
-		public abstract void Apply(GameObject target, GameObject aplier);
-		public abstract void Apply(GameObject target);
-		public abstract void Apply(GameObject target, Vector2 direction);
+		/// <param name="target">Direct target of the Effect.</param>
+		/// <param name="perpetrator">GameObject responsible for the triggering of the Effect.</param>		
+		/// /// <param name="additionalParamenters">For other parameters that depend on the circunstance in which the Effect is triggered rather than the Effect's stats.</param>
+		public abstract void Trigger
+		(
+			GameObject target = null,
+			GameObject perpetrator = null,
+			params object[] additionalParameters
+		);
 	}
 }
