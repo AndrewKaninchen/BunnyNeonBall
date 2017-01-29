@@ -7,19 +7,31 @@ using System.Linq;
 
 namespace PowerSystem
 {
-	public abstract class PowerCreator<PowerInfoType> where PowerInfoType : Power
+	public abstract class PowerCreator<PowerType> where PowerType : Power
 	{
 		public static string name;
 		public static string description;
 		public Stat[] stats;
-		protected PowerInfoType powerInfo;
-		public PowerInfoType Info { get { return powerInfo; } }
+		protected PowerType power;
+		public PowerType Info { get { return power; } }
+
+		public PowerType SetPowerStats()
+		{
+
+			foreach (Stat stat in stats)
+			{
+				stat.SetFields();
+				Debug.Log(stat.name + ": " + stat.GetType().GetField("value").GetValue(stat));
+			}
+			return power;
+		}
 	}
 
 	public abstract class Stat
 	{
 		public string name;
 		public string description;
+		public abstract void SetFields();
 	}
 	public class Stat<T> : Stat
 	{		
@@ -33,9 +45,10 @@ namespace PowerSystem
 			this.affectedFieldSetters = affectedFieldSetters;			
 		}
 
-		public void SetParameters()
+		public override void SetFields()
 		{
 			affectedFieldSetters(value);
+			Debug.Log("setando uns field");
 		}
-	}
+	} 
 }

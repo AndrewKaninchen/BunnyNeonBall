@@ -15,37 +15,39 @@ namespace PowerSystem.UI
 		private EventTrigger eventTrigger;
 		private GameObject powerPanel;
 		private ParameterSetterPanelManager parameterSetterPanelManager;
-
+		public Stat stat;
 
 		public GameObject parameterSetterPanelPrefab;
         //private IntParameterSetterPanelManager parameterSetterPanelManager;
 
-		public void Initialize (MyEventSystem eventSystem, GameObject powerPanel, Stat parameter)
+		public void Initialize (MyEventSystem eventSystem, GameObject powerPanel, Stat stat)
 		{
+			this.stat = stat;
+			stat.GetType().GetField("value").SetValue(stat, 2);
 			this.eventSystem = eventSystem;
 			this.powerPanel = powerPanel;
 
-			transform.FindChild("Parameter Name").GetComponent<Text>().text = parameter.name;
+			transform.FindChild("Parameter Name").GetComponent<Text>().text = stat.name;
 						
-			Type genericParameterType = parameter.GetType().GetGenericArguments()[0];			
+			Type genericStatType = stat.GetType().GetGenericArguments()[0];			
 
-			if (genericParameterType == typeof(int))
+			if (genericStatType == typeof(int))
 			{
 				GameObject g = Instantiate(parameterSetterPanelPrefab, transform) as GameObject;
 				parameterSetterPanelManager =  g.AddComponent<IntParameterSetterPanelManager>();				
 				parameterSetterPanelManager.Initialize(1, 10, 1);
 			}
-			else if (genericParameterType == typeof(bool))
+			else if (genericStatType == typeof(bool))
 			{
 
 			}
-			else if (genericParameterType.IsEnum)
+			else if (genericStatType.IsEnum)
 			{
 				GameObject g = Instantiate(parameterSetterPanelPrefab, transform) as GameObject;
 				parameterSetterPanelManager = g.AddComponent<EnumParameterSetterPanelManager>();
-				((EnumParameterSetterPanelManager)parameterSetterPanelManager).Initialize(genericParameterType);
+				((EnumParameterSetterPanelManager)parameterSetterPanelManager).Initialize(genericStatType);
 			}
-			else if (genericParameterType == typeof(Effect))
+			else if (genericStatType == typeof(Effect))
 			{
 				GameObject g = Instantiate(parameterSetterPanelPrefab, transform) as GameObject;
 				parameterSetterPanelManager = g.AddComponent<EffectParameterSetterPanelManager>();
@@ -63,14 +65,16 @@ namespace PowerSystem.UI
 		public void OnMove (AxisEventData eventData)
 		{
 			if (parameterSetterPanelManager.isActiveAndEnabled)
-			{
+			{		
 				parameterSetterPanelManager.ParameterValue +=
 				(
 					eventData.moveDir == MoveDirection.Right ? 1 :
 					eventData.moveDir == MoveDirection.Left ? -1 :
 					0
 				);
+				//Consertar essa porcaria depois porque tem coisa que não é, well, int. Basicamente isso tem que ser feito nas classes que herdam de ParameterSetterPanelManager.
+				stat.GetType().GetField("value").SetValue(stat, parameterSetterPanelManager.ParameterValue);
 			}
-		}
+		}	
 	}
 }

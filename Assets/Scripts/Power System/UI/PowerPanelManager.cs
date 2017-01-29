@@ -11,8 +11,8 @@ namespace PowerSystem.UI
 {
 	public class PowerPanelManager : MonoBehaviour, IMoveHandler, ICancelHandler, IDeleteHandler
 	{
-		List<GameObject> parameterPanels = new List<GameObject>();
-		MyEventSystem eventSystem;
+		private List<GameObject> parameterPanels = new List<GameObject>();
+		private MyEventSystem eventSystem;
 
 		public Sprite spriteAButton;
 		public Sprite spriteBButton;
@@ -25,8 +25,15 @@ namespace PowerSystem.UI
 		[SerializeField]
 		private Text powerName;
 
+		private object powerCreator;
+
+		//teste
+		public Power power; //teste
+		//teste
+
 		public void Initialize<PowerType> (PowerCreator<PowerType> powerCreator, PowerListPanelManager powerListPanelManager) where PowerType : Power
 		{
+			this.powerCreator = powerCreator;
 			eventSystem = GetComponentInParent<MyEventSystem>();
 			powerListScrollRect = GetComponentInParent<ScrollRect>();
 			powerListPanelRectTransform = transform.parent.parent.GetComponent<RectTransform>();
@@ -37,14 +44,12 @@ namespace PowerSystem.UI
 
 			powerName.text = powerCreator.GetType().GetField("name").GetValue(null) as string;
 
-			foreach (Stat parameter in powerCreator.stats)
-			{
+			foreach (Stat stat in powerCreator.stats)
+			{				
 				GameObject parameterPanel = Instantiate(parameterPanelPrefab, transform.FindChild("Parameters Panel")) as GameObject;
-				parameterPanel.GetComponent<PowerParameterPanelManager>().Initialize(eventSystem, gameObject, parameter);
-
+				parameterPanel.GetComponent<PowerParameterPanelManager>().Initialize(eventSystem, gameObject, stat);				
 				parameterPanels.Add(parameterPanel);				
 			}
-
 		}	
 
 		public void OnToggle(bool data)
@@ -73,6 +78,19 @@ namespace PowerSystem.UI
 			Debug.Log("oie");
 			eventSystem.SetSelectedGameObject(powerListPanelManager.gameObject);
 			Destroy(gameObject);
+		}
+
+		public Power CreatePower()
+		{
+			return (Power) powerCreator.GetType().GetMethod("SetPowerStats").Invoke(powerCreator, null);
+		}	
+
+		public void Update()
+		{
+			if(Input.GetKeyDown(KeyCode.Space))
+			{
+				power = CreatePower();
+			}
 		}
 	}
 }

@@ -34,5 +34,9 @@ namespace PowerSystem.UI
 				valueText.text = left + currentValue.ToString() + right;
 			}
 		}
+
+		public void SetValue(Power power)
+		{			
+		}
 	}
 }

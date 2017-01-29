@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using System;
 
 namespace PowerSystem.UI
 {
@@ -15,7 +17,7 @@ namespace PowerSystem.UI
 			isInitialized = true;
 			ParameterValue = 0;
 		}
-
+				
 		public new void UpdateText()
 		{
 			if (isInitialized)
