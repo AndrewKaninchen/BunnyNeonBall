@@ -12,20 +12,16 @@ namespace PowerSystem.UI
 	public class PowerClassListPanelManager : MonoBehaviour, ISubmitHandler
 	{
 		public PowerListPanelManager powerListPowerManager;
-		private MyEventSystem eventSystem;
+		
 				
 		[HideInInspector]	public	List<GameObject> powerClassPanels;
 		[SerializeField]	private	GameObject powerClassPanelPrefab;
 		[HideInInspector]	public	CharacterPanelManager characterPanelManager;
 
-		private ScrollRect scrollRect;
-
 		public void Initialize(CharacterPanelManager characterPanelManager)
 		{
-			this.characterPanelManager = characterPanelManager;
-			eventSystem = characterPanelManager.eventSystem;
+			this.characterPanelManager = characterPanelManager;	
 			powerClassPanels = new List<GameObject>();
-			scrollRect = GetComponent<ScrollRect>();
 
 			for (int i = 0; i < Manager.powerCreatorTypes.Count; i++)
 			{

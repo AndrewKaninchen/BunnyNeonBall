@@ -22,8 +22,7 @@ namespace PowerSystem.UI
 
 		public void Initialize (MyEventSystem eventSystem, GameObject powerPanel, Stat stat)
 		{
-			this.stat = stat;
-			//stat.GetType().GetField("value").SetValue(stat, 2);
+			this.stat = stat;			
 			this.eventSystem = eventSystem;
 			this.powerPanel = powerPanel;
 
@@ -54,8 +53,7 @@ namespace PowerSystem.UI
 		}
 
 		public void OnCancel(BaseEventData eventData)
-		{
-			//Debug.Log("oi");
+		{			
 			powerPanel.GetComponent<Toggle>().isOn = false;
 			eventSystem.SetSelectedGameObject(powerPanel, eventData);
 		}

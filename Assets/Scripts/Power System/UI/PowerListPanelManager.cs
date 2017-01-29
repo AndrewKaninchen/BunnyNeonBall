@@ -48,8 +48,6 @@ namespace PowerSystem.UI
 			addNewPowerPanel.transform.SetAsLastSibling();
 			powerPanels.Add(g);
 			g.SetActive(true);
-
-			//Debug.Log(powerGenerator.GetType().Name);
 					
 			return g;
 		}	

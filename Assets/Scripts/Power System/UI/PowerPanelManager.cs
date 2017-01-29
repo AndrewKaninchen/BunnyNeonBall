@@ -20,23 +20,20 @@ namespace PowerSystem.UI
 		public GameObject parameterPanelPrefab;
 
 		private ScrollRect powerListScrollRect;
-		private RectTransform powerListPanelRectTransform;
 		private PowerListPanelManager powerListPanelManager;
 		[SerializeField]
 		private Text powerName;
 
-		private object powerCreator;
+		private PowerCreator powerCreator;
 
-		//teste
-		public Power power; //teste
-		//teste
-
-		public void Initialize<PowerType> (PowerCreator<PowerType> powerCreator, PowerListPanelManager powerListPanelManager) where PowerType : Power
+		public Power power; 
+		
+		
+		public void Initialize (PowerCreator powerCreator, PowerListPanelManager powerListPanelManager)
 		{
 			this.powerCreator = powerCreator;
 			eventSystem = GetComponentInParent<MyEventSystem>();
-			powerListScrollRect = GetComponentInParent<ScrollRect>();
-			powerListPanelRectTransform = transform.parent.parent.GetComponent<RectTransform>();
+			powerListScrollRect = GetComponentInParent<ScrollRect>();			
 			this.powerListPanelManager = powerListPanelManager;
 
 			Toggle toggle = GetComponent<Toggle>();
@@ -75,14 +72,13 @@ namespace PowerSystem.UI
 
 		public void OnDelete(BaseEventData eventData)
 		{
-			Debug.Log("oie");
 			eventSystem.SetSelectedGameObject(powerListPanelManager.gameObject);
 			Destroy(gameObject);
 		}
 
 		public Power CreatePower()
 		{
-			return (Power) powerCreator.GetType().GetMethod("SetPowerStats").Invoke(powerCreator, null);
+			return powerCreator.SetPowerStats();
 		}	
 
 		public void Update()

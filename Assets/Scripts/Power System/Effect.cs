@@ -6,7 +6,7 @@ namespace PowerSystem
 {
 	public abstract class Effect : ScriptableObject
 	{
-		public static string name;
+		public static new string name;
 		public static string description;
 		/// <param name="target">Direct target of the Effect.</param>
 		/// <param name="perpetrator">GameObject responsible for the triggering of the Effect.</param>		
