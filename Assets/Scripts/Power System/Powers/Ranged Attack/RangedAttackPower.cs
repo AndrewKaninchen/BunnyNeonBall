@@ -7,8 +7,9 @@ namespace PowerSystem.Powers
 	public abstract class RangedAttackPower : Power
 	{
 		public float rateOfFire;
-		public int amount;
+		//public int amount;
 		public Direction direction;
+
 		public enum SpreadType
 		{
 			Cone,

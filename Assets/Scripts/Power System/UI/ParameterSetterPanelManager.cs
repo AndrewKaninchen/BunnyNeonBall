@@ -9,17 +9,20 @@ namespace PowerSystem.UI
 		protected int currentValue;
 		protected int maxValue;
 		protected int minValue;
+		protected Stat stat;
 		public Text valueText;
 		protected bool isInitialized = false;
 
+
 		public int MaxValue { get { return maxValue; } set { maxValue = value; UpdateText(); } }
 		public int MinValue { get { return minValue; } set { minValue = value; UpdateText(); } }
-		public virtual int ParameterValue { get { return currentValue; } set { currentValue = Mathf.Clamp(value, minValue, maxValue); UpdateText(); } }
+		public virtual int ParameterValue { get { return currentValue; } set { currentValue = Mathf.Clamp(value, minValue, maxValue); UpdateText(); UpdateCreatorStat(); } }
 
-		public void Initialize(int minValue = 1, int maxValue = 3, int startingValue = 1)
+		public void Initialize(Stat stat, int minValue = 1, int maxValue = 3, int startingValue = 1)
 		{
 			this.minValue = minValue;
-			this.maxValue = maxValue;			
+			this.maxValue = maxValue;
+			this.stat = stat;	
 			valueText = GetComponentInChildren<Text>();			
 			isInitialized = true;
 			ParameterValue = startingValue;
@@ -35,8 +38,9 @@ namespace PowerSystem.UI
 			}
 		}
 
-		public void SetValue(Power power)
-		{			
+		public void UpdateCreatorStat()
+		{
+			stat.GetType().GetField("value").SetValue(stat, currentValue);
 		}
 	}
 }

@@ -23,35 +23,33 @@ namespace PowerSystem.UI
 		public void Initialize (MyEventSystem eventSystem, GameObject powerPanel, Stat stat)
 		{
 			this.stat = stat;
-			stat.GetType().GetField("value").SetValue(stat, 2);
+			//stat.GetType().GetField("value").SetValue(stat, 2);
 			this.eventSystem = eventSystem;
 			this.powerPanel = powerPanel;
 
 			transform.FindChild("Parameter Name").GetComponent<Text>().text = stat.name;
 						
-			Type genericStatType = stat.GetType().GetGenericArguments()[0];			
+			Type genericStatType = stat.GetType().GetGenericArguments()[0];
+			GameObject g = Instantiate(parameterSetterPanelPrefab, transform) as GameObject;
 
 			if (genericStatType == typeof(int))
-			{
-				GameObject g = Instantiate(parameterSetterPanelPrefab, transform) as GameObject;
+			{				
 				parameterSetterPanelManager =  g.AddComponent<IntParameterSetterPanelManager>();				
-				parameterSetterPanelManager.Initialize(1, 10, 1);
+				parameterSetterPanelManager.Initialize(stat, 1, 10, 1);
 			}
 			else if (genericStatType == typeof(bool))
 			{
 
 			}
 			else if (genericStatType.IsEnum)
-			{
-				GameObject g = Instantiate(parameterSetterPanelPrefab, transform) as GameObject;
+			{				
 				parameterSetterPanelManager = g.AddComponent<EnumParameterSetterPanelManager>();
-				((EnumParameterSetterPanelManager)parameterSetterPanelManager).Initialize(genericStatType);
+				((EnumParameterSetterPanelManager)parameterSetterPanelManager).Initialize(stat, genericStatType);
 			}
 			else if (genericStatType == typeof(Effect))
-			{
-				GameObject g = Instantiate(parameterSetterPanelPrefab, transform) as GameObject;
+			{			
 				parameterSetterPanelManager = g.AddComponent<EffectParameterSetterPanelManager>();
-				((EffectParameterSetterPanelManager)parameterSetterPanelManager).Initialize();
+				((EffectParameterSetterPanelManager)parameterSetterPanelManager).Initialize(stat);
 			}
 		}
 
@@ -71,9 +69,7 @@ namespace PowerSystem.UI
 					eventData.moveDir == MoveDirection.Right ? 1 :
 					eventData.moveDir == MoveDirection.Left ? -1 :
 					0
-				);
-				//Consertar essa porcaria depois porque tem coisa que não é, well, int. Basicamente isso tem que ser feito nas classes que herdam de ParameterSetterPanelManager.
-				stat.GetType().GetField("value").SetValue(stat, parameterSetterPanelManager.ParameterValue);
+				);								
 			}
 		}	
 	}

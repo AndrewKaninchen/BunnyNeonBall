@@ -7,10 +7,11 @@ namespace PowerSystem.UI
 	public class EnumParameterSetterPanelManager : ParameterSetterPanelManager
 	{		
 		public Type enumType;
-		public override int ParameterValue { get { return currentValue; } set { currentValue = Mathf.Clamp(value, minValue, maxValue); UpdateText(); } }
+		public override int ParameterValue { get { return currentValue; } set { currentValue = Mathf.Clamp(value, minValue, maxValue); UpdateText(); UpdateCreatorStat(); } }
 
-		public void Initialize(Type enumType)
+		public void Initialize(Stat stat, Type enumType)
 		{
+			this.stat = stat;
 			this.enumType = enumType;
 			minValue = 0;
 			maxValue = Enum.GetNames(enumType).GetLength(0)-1;			
