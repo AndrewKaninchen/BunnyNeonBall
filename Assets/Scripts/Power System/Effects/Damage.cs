@@ -7,6 +7,9 @@ namespace PowerSystem.Effects
 	[CreateAssetMenu(menuName = "Effects/_Damage")]
 	public class Damage : Effect
 	{
+		public static new string name = "Damage";
+		public static new string description = "Applies an amount of damage to the affected object.";
+
 		public float amount;
 		public override void Trigger(GameObject target = null, GameObject perpetrator = null, params object[] additionalParameters)
 		{

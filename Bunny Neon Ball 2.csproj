@@ -103,6 +103,7 @@
     <Compile Include="Assets\Scripts\Power System\UI\AddNewPowerPanelManager.cs" />
     <Compile Include="Assets\Scripts\Power System\UI\AddNewPowerPanelManager2.cs" />
     <Compile Include="Assets\Scripts\Power System\UI\CharacterPanelManager.cs" />
+    <Compile Include="Assets\Scripts\Power System\UI\EffectParameterSetterPanelManager.cs" />
     <Compile Include="Assets\Scripts\Power System\UI\EnumParameterSetterPanelManager.cs" />
     <Compile Include="Assets\Scripts\Power System\UI\IntParameterSetterPanelManager.cs" />
     <Compile Include="Assets\Scripts\Power System\UI\MainPanelManager.cs" />

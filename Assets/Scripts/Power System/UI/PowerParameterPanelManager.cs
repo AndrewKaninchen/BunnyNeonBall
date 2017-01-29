@@ -47,7 +47,9 @@ namespace PowerSystem.UI
 			}
 			else if (genericParameterType == typeof(Effect))
 			{
-
+				GameObject g = Instantiate(parameterSetterPanelPrefab, transform) as GameObject;
+				parameterSetterPanelManager = g.AddComponent<EffectParameterSetterPanelManager>();
+				((EffectParameterSetterPanelManager)parameterSetterPanelManager).Initialize();
 			}
 		}
 

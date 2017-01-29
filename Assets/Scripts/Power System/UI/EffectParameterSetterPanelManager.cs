@@ -1,20 +1,17 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System;
 
 namespace PowerSystem.UI
 {
-	public class EnumParameterSetterPanelManager : ParameterSetterPanelManager
-	{		
-		public Type enumType;
+	public class EffectParameterSetterPanelManager : ParameterSetterPanelManager
+	{			
 		public override int ParameterValue { get { return currentValue; } set { currentValue = Mathf.Clamp(value, minValue, maxValue); UpdateText(); } }
 
-		public void Initialize(Type enumType)
-		{
-			this.enumType = enumType;
+		public void Initialize()
+		{			
 			minValue = 0;
-			maxValue = Enum.GetNames(enumType).GetLength(0)-1;			
-			valueText = GetComponentInChildren<Text>();			
+			maxValue = Manager.effectTypes.Count-1;
+			valueText = GetComponentInChildren<Text>();
 			isInitialized = true;
 			ParameterValue = 0;
 		}
@@ -25,7 +22,7 @@ namespace PowerSystem.UI
 			{
 				string right = (currentValue >= maxValue) ? "  " : " ▶";
 				string left = (currentValue <= minValue) ? "  " : "◀ ";
-				valueText.text = left + Enum.GetName(enumType, currentValue) + right;
+				valueText.text = left + Manager.effectTypes[currentValue].GetField("name").GetValue(null) + right;
 			}
 		}
 	}

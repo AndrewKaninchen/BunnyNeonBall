@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PowerSystem.UI.AddNewPowerDropdownManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAIAAQAAAAAAAAACAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\UI\AddNewPowerDropdownManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PowerSystem.UI.AddNewPowerPanelManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAgACABAAIAAQAAAAAAAASCAACAAAAAAEEAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\UI\AddNewPowerPanelManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PowerSystem.UI.AddNewPowerPanelManager2" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgACABAAIAAQAAAAAAIASAAAAAAAAABIAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\UI\AddNewPowerPanelManager2.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PowerSystem.UI.CharacterPanelManager" Collapsed="true">
+    <Position X="10.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAkABAQAQAAAABgAACiAAAAAIIEAAABABAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\UI\CharacterPanelManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.UI.EnumParameterSetterPanelManager" Collapsed="true">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAQAAAAAgAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\UI\EnumParameterSetterPanelManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.UI.IntParameterSetterPanelManager" Collapsed="true">
+    <Position X="2.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\UI\IntParameterSetterPanelManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.UI.MainPanelManager" Collapsed="true">
+    <Position X="5.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAwAAAAAACAAAAAAAAAAAAAAAAEAAAAAAAsAAAAUAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\UI\MainPanelManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.UI.NamePanelManager" Collapsed="true">
+    <Position X="7" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\UI\NamePanelManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.UI.ParameterSetterPanelManager" Collapsed="true">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAgAAQgAAAAoAAAAAAAAACAEAAAgAEAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\UI\ParameterSetterPanelManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.UI.PowerClassListPanelManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAIAAQQBAEAAAASAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Assets\Scripts\Power System\UI\PowerClassListPanelManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PowerSystem.UI.PowerClassPanelManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AARAACAAARIAAQAABCBAAACAAAQAAAAAAIAAAAABAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\UI\PowerClassPanelManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PowerSystem.UI.PowerListPanelManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AARAAAAAAAYAAQAAIAAAICSAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\UI\PowerListPanelManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PowerSystem.UI.PowerPanelManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQgACABgAQAAQAAIAAAAACAAAAAAAAEAAQAAAAEABA=</HashCode>
+      <FileName>Assets\Scripts\Power System\UI\PowerPanelManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PowerSystem.UI.PowerParameterPanelManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAgCAABAAAASAAAAAABACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\UI\PowerParameterPanelManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PowerSystem.UI.PreviewPanelManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIIQAQAAAAAAAISCAAAAAAAAAAAAAAAAQQg=</HashCode>
+      <FileName>Assets\Scripts\Power System\UI\PreviewPanelManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -15,7 +15,8 @@ namespace PowerSystem.Powers
 			stats = new Stat[]
 			{
 				new Stat<int>("Range", "How far the beam goes.", value => powerInfo.range = value),
-				new Stat<Direction>("Direction", "Direction of fire", value => powerInfo.direction = value)
+				new Stat<Direction>("Direction", "Direction of fire.", value => powerInfo.direction = value),
+				new Stat<Effect>("Effect", "Effect to be aplied to what is hit by the beam.", value => powerInfo.effect = value)
 			};
 		}
 	}

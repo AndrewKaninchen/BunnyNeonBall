@@ -8,6 +8,8 @@ namespace PowerSystem.Effects
 	[CreateAssetMenu(menuName = "Effects/_AddForce")]
 	public class AddForce : Effect
 	{
+		public static new string name = "Add Force";
+		public static new string description = "Applies an amount of kinectic energy to the affected body.";
 		public float magnitude;
 
 		public override void Trigger(GameObject target = null, GameObject perpetrator = null, params object[] additionalParameters)
