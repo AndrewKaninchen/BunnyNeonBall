@@ -50,14 +50,11 @@ namespace PowerSystem.UI
 
 		public void AddPower(int powerClassID)
 		{
-			Type pigT = Manager.powerCreatorTypes[powerClassID];
-			Type piT = Manager.powerTypes[powerClassID];
+			Type powerCreatorType = Manager.powerCreatorTypes[powerClassID];
+			PowerCreator powerCreator = (PowerCreator)Activator.CreateInstance(powerCreatorType);
 
-			//begin	Suicídio mental
-			var addPowerMethod = typeof(PowerListPanelManager).GetMethod("AddPower");
-			var addPowerMethodInstance = addPowerMethod.MakeGenericMethod(pigT, piT);
-			addPowerMethodInstance.Invoke(powerListPanelManager, null);
-			StartCoroutine("SetScrollRectPosition");
+			powerListPanelManager.AddPower(powerCreator);
+			StartCoroutine("SetScrollRectPosition");			
 		}
 
 		public void OnCancel(BaseEventData eventData)

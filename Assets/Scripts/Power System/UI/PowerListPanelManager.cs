@@ -36,21 +36,20 @@ namespace PowerSystem.UI
 			powerPanels = new List<GameObject>();
 			scrollRect = GetComponent<ScrollRect>();			
 		}
-
-		public GameObject AddPower<PowerInfoGeneratorType, PowerInfoType>() where PowerInfoType : Power where PowerInfoGeneratorType : PowerCreator<PowerInfoType>, new()
+		
+		public GameObject AddPower(PowerCreator powerCreator)
 		{
 			GameObject g = Instantiate(powerPanelPrefab);
-			g.transform.SetParent(transform.GetChild(0)); //Bug maroto que faz o treco não aparecer me forçou a usar o jeito errado
-			
-			
-			PowerInfoGeneratorType powerGenerator = new PowerInfoGeneratorType();
-			g.GetComponent<PowerPanelManager>().Initialize(powerGenerator, this);
+			g.transform.SetParent(transform.GetChild(0));
+
+			g.GetComponent<PowerPanelManager>().Initialize(powerCreator, this);
+
 			addNewPowerPanel.transform.SetAsLastSibling();
 			powerPanels.Add(g);
 			g.SetActive(true);
-					
+
 			return g;
-		}	
+		}		
 
 		public void OnSubmit(BaseEventData eventData)
 		{
