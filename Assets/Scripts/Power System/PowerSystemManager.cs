@@ -21,7 +21,7 @@ namespace PowerSystem
 			powerCreatorTypes = new List<Type>
 			(
 				assembly.GetTypes().Where(
-					t => t.BaseType != null && t.BaseType.IsGenericType && t.BaseType.GetGenericTypeDefinition() == typeof(PowerCreator<>))
+					t => t.BaseType != null && t.BaseType.IsGenericType && t.IsSubclassOf(typeof(PowerCreator)) && !t.IsAbstract)
 			);
 		}
 	}

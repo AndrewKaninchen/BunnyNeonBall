@@ -2,7 +2,7 @@
 
 namespace PowerSystem.Powers
 {	
-	public class RangedAttackBeamPowerCreator : PowerCreator<RangedAttackBeamPower>
+	public class RangedAttackBeamPowerCreator : PowerCreator<RangedAttackBeamPower, RangedAttackBeamPowerController>
 	{
 		public static new string name = "Shoot (Beam)";
 		public static new string description = "Shoots a Beam. Obviously.";

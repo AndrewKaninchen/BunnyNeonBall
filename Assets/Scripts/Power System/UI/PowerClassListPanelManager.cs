@@ -9,7 +9,7 @@ using PowerSystem.Powers;
 
 namespace PowerSystem.UI
 {
-	public class PowerClassListPanelManager : MonoBehaviour, ISubmitHandler
+	public class PowerClassListPanelManager : MonoBehaviour
 	{
 		public PowerListPanelManager powerListPowerManager;
 		
@@ -40,10 +40,6 @@ namespace PowerSystem.UI
 			GameObject g = Instantiate(powerClassPanelPrefab, transform.GetChild(0));
 			g.GetComponent<PowerClassPanelManager>().Initialize(characterPanelManager, classID, name, description);
 			powerClassPanels.Add(g);
-		}	
-
-		public void OnSubmit(BaseEventData eventData)
-		{			
 		}
 	}
 }

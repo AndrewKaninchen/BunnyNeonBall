@@ -35,7 +35,7 @@ namespace PowerSystem.Powers
 		Crosshair
 	}
 
-	public class RangedAttackPowerController : PowerController
+	public abstract class RangedAttackPowerController <RangedAttackPowerType> : PowerController <RangedAttackPowerType> where RangedAttackPowerType : Power
 	{
 		protected Character character;	
 

@@ -10,15 +10,14 @@ namespace PowerSystem
 	public abstract class PowerCreator
 	{
 		public static string name;
-		public static string description;
+		public static string description;				
 		public Stat[] stats;
 		public abstract Power Power { get; }
-		public abstract Power SetPowerStats();
+		public abstract Power SetPowerStats();		
 	}
 
-	public abstract class PowerCreator<PowerType> : PowerCreator where PowerType : Power
-	{
-		public static Type powerType = typeof(PowerType);
+	public abstract class PowerCreator<PowerType, PowerControllerType> : PowerCreator where PowerType : Power where PowerControllerType : PowerController
+	{		
 		protected PowerType power;
 		public override Power Power { get { return power; } }
 

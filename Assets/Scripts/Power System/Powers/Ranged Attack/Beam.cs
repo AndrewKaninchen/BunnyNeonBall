@@ -61,7 +61,7 @@ namespace PowerSystem.Powers
 		void Update()
 		{
 
-			direction = controller.GetFireDirection(controller.powerInfo.direction);
+			direction = controller.GetFireDirection(controller.power.direction);
 			Vector2 point1 = transform.position;
 			Vector2 point2 = GetTarget();
 

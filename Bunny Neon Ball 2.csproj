@@ -86,6 +86,7 @@
     <Compile Include="Assets\Scripts\Power System\Effects\AddForce.cs" />
     <Compile Include="Assets\Scripts\Power System\Effects\Damage.cs" />
     <Compile Include="Assets\Scripts\Power System\Effects\Destroy.cs" />
+    <Compile Include="Assets\Scripts\Power System\InputManager.cs" />
     <Compile Include="Assets\Scripts\Power System\Power.cs" />
     <Compile Include="Assets\Scripts\Power System\PowerController.cs" />
     <Compile Include="Assets\Scripts\Power System\PowerCreator.cs" />

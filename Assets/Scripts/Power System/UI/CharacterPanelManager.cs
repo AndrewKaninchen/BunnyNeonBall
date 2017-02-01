@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 using System.Collections;
 using System.Collections.Generic;
 using Utilities;
+using System;
 
 namespace PowerSystem.UI
 {
@@ -34,6 +35,8 @@ namespace PowerSystem.UI
 		[HideInInspector]	public GameObject availableActionsPanel;		
 		[HideInInspector]	public GameObject powerClassListPanel;
 
+		private Character character;
+
 		public void Initialize(int playerID)
 		{
 			this.playerID = playerID;
@@ -60,6 +63,8 @@ namespace PowerSystem.UI
 			previewPanel = Instantiate(previewPanelPrefab);
 			previewPanel.transform.SetParent(transform);
 
+			character = previewPanel.GetComponentInChildren<Character>();
+
 			powerListPanel = Instantiate(powerListPanelPrefab);
 			powerListPanel.transform.SetParent(transform);
 
@@ -75,6 +80,24 @@ namespace PowerSystem.UI
 			powerClassListPanel.GetComponent<PowerClassListPanelManager>().Initialize(this);			
 
 			isInitialized = true;
-		}		
+		}
+
+		public void Update()
+		{
+			if(Input.GetButtonDown("Start"+playerID) && isInitialized)
+			{
+				character.playerID = playerID;
+				character.GetComponent<Rolling>().enabled = true;
+
+				foreach (GameObject powerPanel in powerListPanel.GetComponent<PowerListPanelManager>().powerPanels)
+				{
+					PowerPanelManager panelManager = powerPanel.GetComponent<PowerPanelManager>();						
+					Type controllerType = panelManager.powerCreator.GetType().BaseType.GetGenericArguments()[1];
+					PowerController powerController = character.gameObject.AddComponent(controllerType) as PowerController;
+					Power power = powerController.Power = panelManager.UpdatePower();
+					power.activationKey = "A";
+				}				
+			}
+		}
 	}
 }

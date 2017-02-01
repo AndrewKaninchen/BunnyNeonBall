@@ -24,8 +24,7 @@ namespace PowerSystem.UI
 		[SerializeField]
 		private Text powerName;
 
-		private PowerCreator powerCreator;
-
+		public PowerCreator powerCreator;
 		public Power power; 
 		
 		
@@ -76,7 +75,7 @@ namespace PowerSystem.UI
 			Destroy(gameObject);
 		}
 
-		public Power CreatePower()
+		public Power UpdatePower()
 		{
 			return powerCreator.SetPowerStats();
 		}	
@@ -85,7 +84,7 @@ namespace PowerSystem.UI
 		{
 			if(Input.GetKeyDown(KeyCode.Space))
 			{
-				power = CreatePower();
+				power = UpdatePower();
 			}
 		}
 	}

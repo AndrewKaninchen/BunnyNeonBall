@@ -3,24 +3,21 @@ using System.Collections;
 
 namespace PowerSystem.Powers
 {
-	public class RangedAttackBeamPowerController : RangedAttackPowerController
-	{
-		public RangedAttackBeamPower powerInfo;
+	public class RangedAttackBeamPowerController : RangedAttackPowerController <RangedAttackBeamPower>
+	{		
 		public GameObject beamPrefab;
 
 		private bool locked;
 
-		// Use this for initialization
-		void Start()
+		void OnEnable()
 		{
 			character = GetComponent<Character>();
 			locked = false;
 		}
 
-		// Update is called once per frame
 		void Update()
 		{
-			if (!locked && Input.GetButtonDown(powerInfo.activationKey + character.playerID))
+			if (!locked && Input.GetButtonDown(power.activationKey + character.playerID))
 			{
 				Shoot();
 				StartCoroutine(Lock());
@@ -29,20 +26,20 @@ namespace PowerSystem.Powers
 
 		void Shoot()
 		{
-			Vector2 direction = GetFireDirection(powerInfo.direction);
+			Vector2 direction = GetFireDirection(power.direction);
 
 			GameObject beamInstance = Instantiate(beamPrefab);
 			beamInstance.transform.position = transform.position;
 			beamInstance.transform.SetParent(transform);
 
 			Beam beamController = beamInstance.GetComponent<Beam>();
-			beamController.Initialize(character, this, powerInfo.range, powerInfo.effect, direction);
+			beamController.Initialize(character, this, power.range, power.effect, direction);
 		}
 
 		IEnumerator Lock()
 		{
 			locked = true;
-			yield return new WaitForSeconds(powerInfo.rateOfFire);
+			yield return new WaitForSeconds(power.rateOfFire);
 			locked = false;
 		}
 	}

@@ -3,15 +3,13 @@ using System.Collections;
 
 namespace PowerSystem.Powers
 {
-	public class JumpPowerController : PowerController
+	public class JumpPowerController : PowerController <JumpPower>
 	{
-		private int jumpsLeft;
-
-		public JumpPower powerInfo;
+		private int jumpsLeft;		
 		private Rigidbody2D rb;
 		private Character character;
 
-		void Start()
+		void OnEnable()
 		{
 			rb = GetComponent<Rigidbody2D>();
 			character = GetComponent<Character>();
@@ -21,7 +19,7 @@ namespace PowerSystem.Powers
 		void FixedUpdate()
 		{
 			if (character.IsGrounded)
-				jumpsLeft = powerInfo.jumpAmount;
+				jumpsLeft = power.jumpAmount;
 			else if (character.WasGrounded)
 				jumpsLeft--;
 			//Debug.Log("Jumps Left: " + jumpsLeft);	
@@ -29,7 +27,7 @@ namespace PowerSystem.Powers
 
 		void Update()
 		{
-			if (jumpsLeft > 0 && Input.GetButtonDown(powerInfo.activationKey + character.playerID))
+			if (jumpsLeft > 0 && Input.GetButtonDown(power.activationKey + character.playerID))
 			{
 				Trigger();
 			}
@@ -38,7 +36,7 @@ namespace PowerSystem.Powers
 		public void Trigger()
 		{
 			rb.velocity = new Vector2(rb.velocity.x, 0f);
-			rb.AddForce(new Vector2(0, powerInfo.jumpForce));
+			rb.AddForce(new Vector2(0, power.jumpForce));
 			jumpsLeft--;
 		}
 	}
