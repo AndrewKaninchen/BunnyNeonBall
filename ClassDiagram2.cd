@@ -1,0 +1,334 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PowerSystem.Powers.JumpPower" Collapsed="true">
+    <Position X="6.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAE=</HashCode>
+      <FileName>Assets\Scripts\Power System\Powers\Jump\JumpPower.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.Powers.JumpPowerCreator" Collapsed="true">
+    <Position X="13.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAIAAAAAAQAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\Powers\Jump\JumpPower.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.Powers.JumpPowerController" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQIAAAAAgAAABAEAAAAAAAAAAAAAAgAAAAAAAAACAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\Powers\Jump\JumpPowerController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.Powers.JumpPowerStats" Collapsed="true">
+    <Position X="8.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\Powers\Jump\JumpPowerCreator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.Powers.Beam" Collapsed="true">
+    <Position X="8" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAQACAAoAAAAoQECAAgQAAAIAQAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\Powers\Ranged Attack\Beam.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.Powers.RangedAttackBeamPower" Collapsed="true">
+    <Position X="4.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\Powers\Ranged Attack\RangedAttackBeamPower.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.Powers.RangedAttackBeamPowerController" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQQAAAAAAAAJAAAAAAAAAAAAAAAAAAAIAAAAAAACAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\Powers\Ranged Attack\RangedAttackBeamPowerController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.Powers.RangedAttackBeamPowerCreator" Collapsed="true">
+    <Position X="11.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\Powers\Ranged Attack\RangedAttackBeamPowerCreator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.Powers.RangedAttackPower" Collapsed="true">
+    <Position X="4.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\Powers\Ranged Attack\RangedAttackPower.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.Powers.RangedAttackPowerController&lt;RangedAttackPowerType&gt;" Collapsed="true">
+    <Position X="0.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\Powers\Ranged Attack\RangedAttackPower.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.Character" Collapsed="true">
+    <Position X="21" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACQAAAipAiBQEAIgTAACAAAAIAAAgAAAAIAACIAgAEA=</HashCode>
+      <FileName>Assets\Scripts\Power System\Character.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.Effect" Collapsed="true">
+    <Position X="2.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAIAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\Effect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.EffectCreator" Collapsed="true">
+    <Position X="8.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAgAAAAAIAAACAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\EffectCreator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.EffectCreator&lt;EffectType&gt;" Collapsed="true">
+    <Position X="8.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAgAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\EffectCreator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.Power" Collapsed="true">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\Power.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.PowerController" Collapsed="true">
+    <Position X="2.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\PowerController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.PowerController&lt;PowerType&gt;" Collapsed="true">
+    <Position X="0.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\PowerController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.PowerCreator" Collapsed="true">
+    <Position X="11.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAEAIAAAAAAAAAAEAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\PowerCreator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.PowerCreator&lt;PowerType, PowerControllerType&gt;" Collapsed="true">
+    <Position X="13.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAEAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\PowerCreator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.Stat" Collapsed="true">
+    <Position X="10.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAIAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\PowerCreator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.Stat&lt;T&gt;" Collapsed="true">
+    <Position X="10.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAAAAAABAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\PowerCreator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.Manager" Collapsed="true">
+    <Position X="15.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAABAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\PowerSystemManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.Effects.AddForceEffect" Collapsed="true">
+    <Position X="5" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAIAAAAAAAAAAEAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\Effects\AddForceEffect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.Effects.AddForceEffectCreator" Collapsed="true">
+    <Position X="8.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAIAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\Effects\AddForceEffect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.Effects.Damage" Collapsed="true">
+    <Position X="0.5" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAIAAAAAAAAAAEgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\Effects\Damage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.Effects.Destroy" Collapsed="true">
+    <Position X="2.75" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAIAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\Effects\Destroy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.InputManager.InputManager" Collapsed="true">
+    <Position X="19.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\InputManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.InputManager.InputAxis" Collapsed="true">
+    <Position X="17.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAIABA=</HashCode>
+      <FileName>Assets\Scripts\Power System\InputManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.UI.AddNewPowerDropdownManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="15.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAIAAQAAAAAAAAACAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\UI\AddNewPowerDropdownManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PowerSystem.UI.AddNewPowerPanelManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAgACABAAIAAQAAAAAAAASCAACAAAAAAEEAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\UI\AddNewPowerPanelManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PowerSystem.UI.AddNewPowerPanelManager2" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgACABAAIAAQAAAAAAIASAAAAAAAAABIAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\UI\AddNewPowerPanelManager2.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PowerSystem.UI.CharacterPanelManager" Collapsed="true">
+    <Position X="15.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABQIAAAkABAQAQAAAABgAACiAAAAAIIEAAABABAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\UI\CharacterPanelManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.UI.EffectParameterSetterPanelManager" Collapsed="true">
+    <Position X="0.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAQAAAAAgAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\UI\EffectParameterSetterPanelManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.UI.EnumParameterSetterPanelManager" Collapsed="true">
+    <Position X="2.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAQAAAAAgAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\UI\EnumParameterSetterPanelManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.UI.IntParameterSetterPanelManager" Collapsed="true">
+    <Position X="5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\UI\IntParameterSetterPanelManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.UI.MainPanelManager" Collapsed="true">
+    <Position X="21" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAwAAAAAACAAAAAAAAAAAAAAAAEAAAAAAAsAAAAUAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\UI\MainPanelManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.UI.NamePanelManager" Collapsed="true">
+    <Position X="17.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\UI\NamePanelManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.UI.ParameterSetterPanelManager" Collapsed="true">
+    <Position X="2.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAgAAQgAAAAoAAEAAAAAAiAEAAAgAEAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\UI\ParameterSetterPanelManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.UI.PowerClassListPanelManager" Collapsed="true">
+    <Position X="19.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQQBAEAAAAQAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Assets\Scripts\Power System\UI\PowerClassListPanelManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PowerSystem.UI.PowerClassPanelManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="21" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AARAACAAARIAAQAABCBAAACAAAQAAAAAAIAAAAABAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\UI\PowerClassPanelManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PowerSystem.UI.PowerListPanelManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="15.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AARAAAAAAAYAAQAAIAAAICSAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\UI\PowerListPanelManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PowerSystem.UI.PowerPanelManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQgACABgAQAAQAAIAAAAACAAAEAAAEEAAQAAAAAABA=</HashCode>
+      <FileName>Assets\Scripts\Power System\UI\PowerPanelManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PowerSystem.UI.PowerParameterPanelManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAgCAABAAAASAAAAAABACAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\UI\PowerParameterPanelManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PowerSystem.UI.PreviewPanelManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="21" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAQAAAAIIQAQAAAAAAAISCAAAAAAAAAAAAAAAAQQg=</HashCode>
+      <FileName>Assets\Scripts\Power System\UI\PreviewPanelManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Enum Name="PowerSystem.Powers.Direction" Collapsed="true">
+    <Position X="8" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAQAgIIAAAAAAAAAAAAAAAAAAAAAAAACACAIAAFDAI=</HashCode>
+      <FileName>Assets\Scripts\Power System\Powers\Ranged Attack\RangedAttackPower.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PowerSystem.InputManager.AxisType" Collapsed="true">
+    <Position X="15.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Assets\Scripts\Power System\InputManager.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -69,7 +69,8 @@ namespace Utilities
 
 		void OnEnable()
 		{
-			childrenExitTarget = GetComponent<Selectable>();
+			if(childrenExitTarget == null)
+				childrenExitTarget = GetComponent<Selectable>();
 			if (eventSystem == null)
 				eventSystem = GetComponentInParent<EventSystem>();
 			if (eventSystem == null)

@@ -4,15 +4,16 @@ using System.Collections;
 namespace PowerSystem.Powers
 {
 	public class RangedAttackBeamPowerController : RangedAttackPowerController <RangedAttackBeamPower>
-	{		
+	{
 		public GameObject beamPrefab;
 
 		private bool locked;
 
 		void OnEnable()
 		{
+			beamPrefab = Resources.Load("Prefabs/Beam", typeof(GameObject)) as GameObject;
 			character = GetComponent<Character>();
-			locked = false;
+			locked = false;			
 		}
 
 		void Update()

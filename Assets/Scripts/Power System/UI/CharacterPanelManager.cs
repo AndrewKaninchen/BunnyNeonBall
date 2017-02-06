@@ -88,6 +88,9 @@ namespace PowerSystem.UI
 			{
 				character.playerID = playerID;
 				character.GetComponent<Rolling>().enabled = true;
+				character.GetComponent<Rigidbody2D>().gravityScale = 2f;
+				PreviewPanelManager pPanelManager = previewPanel.GetComponent<PreviewPanelManager>();
+				pPanelManager.Expand();
 
 				foreach (GameObject powerPanel in powerListPanel.GetComponent<PowerListPanelManager>().powerPanels)
 				{

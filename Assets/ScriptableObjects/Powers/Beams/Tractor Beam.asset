@@ -11,11 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 761da34702f08a143a95e2a5f4667c21, type: 3}
   m_Name: Tractor Beam
   m_EditorClassIdentifier: 
-  baseCostPerGraduation: 0
-  maxGraduations: 0
   activationKey: B
   rateOfFire: 0.2
-  amount: 0
   direction: 11
   range: 50
-  effect: {fileID: 11400000, guid: dc009cfac21f35440aced179b40b4d1b, type: 2}
+  effect: {fileID: 11400000, guid: 30cec95e4891e454594ee7aa1c237b4f, type: 2}

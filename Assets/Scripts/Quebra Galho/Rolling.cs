@@ -20,7 +20,7 @@ namespace Utilities
 		void Update()
 		{
 			float h = Input.GetAxis("Horizontal1");
-			rb.AddForce(new Vector2(h * rollSpeed, 0));
+			rb.AddForce(new Vector2(h * rollSpeed * Time.deltaTime, 0));
 		}
 	}
 }

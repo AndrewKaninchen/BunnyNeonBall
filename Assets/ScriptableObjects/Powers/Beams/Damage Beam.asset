@@ -11,11 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 761da34702f08a143a95e2a5f4667c21, type: 3}
   m_Name: Damage Beam
   m_EditorClassIdentifier: 
-  baseCostPerGraduation: 0
-  maxGraduations: 0
   activationKey: Y
   rateOfFire: 0
-  amount: 1
-  direction: 8
+  direction: 12
   range: 50
   effect: {fileID: 11400000, guid: 574f176abd29c82418b63bba979988c7, type: 2}

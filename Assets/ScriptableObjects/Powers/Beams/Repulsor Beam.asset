@@ -11,11 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 761da34702f08a143a95e2a5f4667c21, type: 3}
   m_Name: Repulsor Beam
   m_EditorClassIdentifier: 
-  baseCostPerGraduation: 0
-  maxGraduations: 0
   activationKey: X
   rateOfFire: 0.2
-  amount: 0
   direction: 11
   range: 50
-  effect: {fileID: 11400000, guid: 61cd06626dc2cd440a7602b63096b27c, type: 2}
+  effect: {fileID: 11400000, guid: 30558caeb07b21643ad31410e4e660c9, type: 2}

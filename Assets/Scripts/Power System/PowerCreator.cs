@@ -19,9 +19,7 @@ namespace PowerSystem
 	public abstract class PowerCreator<PowerType, PowerControllerType> : PowerCreator where PowerType : Power where PowerControllerType : PowerController
 	{		
 		protected PowerType power;
-		public override Power Power { get { return power; } }
-
-		public PowerType Info { get { return power; } }
+		public override Power Power { get { return power; } }		
 				
 		public override Power SetPowerStats()
 		{

@@ -13,8 +13,11 @@ namespace PowerSystem.UI
 	{
 		private MyEventSystem eventSystem;
 		private EventTrigger eventTrigger;
+		public GameObject innerPanel;
+		public GameObject namePanel;
 		private GameObject powerPanel;
 		private ParameterSetterPanelManager parameterSetterPanelManager;
+		
 		public Stat stat;
 
 		public GameObject parameterSetterPanelPrefab;
@@ -26,10 +29,10 @@ namespace PowerSystem.UI
 			this.eventSystem = eventSystem;
 			this.powerPanel = powerPanel;
 
-			transform.FindChild("Parameter Name").GetComponent<Text>().text = stat.name;
+			namePanel.GetComponent<Text>().text = stat.name;
 						
 			Type genericStatType = stat.GetType().GetGenericArguments()[0];
-			GameObject g = Instantiate(parameterSetterPanelPrefab, transform) as GameObject;
+			GameObject g = Instantiate(parameterSetterPanelPrefab, innerPanel.transform) as GameObject;
 
 			if (genericStatType == typeof(int))
 			{				

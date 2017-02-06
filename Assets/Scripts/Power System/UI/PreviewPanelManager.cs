@@ -12,12 +12,12 @@ namespace PowerSystem.UI
 	{
 		[HideInInspector]
 		public CharacterPanelManager characterPanelManager;
-		MyEventSystem eventSystem;
-		[SerializeField]
-		private Camera previewCamera;
+		MyEventSystem eventSystem;		
+		public Camera previewCamera, previewCamera2;
 		[SerializeField]
 		private GameObject previewImage;
 
+		public GameObject looksPanel;
 		public Dropdown coreMaterialDropdown, ringMaterialDropdown, coreShapeDropDown;
 
 		private HierarchyNavigationGroup navGroup;
@@ -40,6 +40,13 @@ namespace PowerSystem.UI
 		public void OnDropdownCancel()
 		{
 			eventSystem.SetSelectedGameObject(gameObject);
+		}
+
+		public void Expand()
+		{
+			previewCamera.gameObject.SetActive(false);
+			previewCamera2.gameObject.SetActive(true);
+			looksPanel.SetActive(false);
 		}
 	}
 }

@@ -10,5 +10,5 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0563da86bacb5824291e3c5ee58e8c08, type: 3}
   m_Name: Repulse500
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp:PowerSystem.Effects:Push
   magnitude: -500
