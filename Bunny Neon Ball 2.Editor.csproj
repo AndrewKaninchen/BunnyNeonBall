@@ -176,6 +176,7 @@
     <Compile Include="Assets\PostProcessing-master\PostProcessing\Editor\Utils\EditorResources.cs" />
     <Compile Include="Assets\PostProcessing-master\PostProcessing\Editor\Utils\FxStyles.cs" />
     <Compile Include="Assets\PostProcessing-master\PostProcessing\Editor\Utils\ReflectionUtils.cs" />
+    <Compile Include="Assets\Scripts\Power System\Editor\PowerEditor.cs" />
     <Compile Include="Assets\Scripts\Power System\UI\Editor\CharacterPanelManagerEditor.cs" />
     <Compile Include="Assets\Scripts\Power System\UI\Editor\MainPanelManagerEditor.cs" />
     <Compile Include="Assets\Scripts\Power System\UI\Editor\PowerListPanelManagerEditor.cs" />

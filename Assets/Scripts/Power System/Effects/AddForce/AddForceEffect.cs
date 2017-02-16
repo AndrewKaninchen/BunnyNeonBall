@@ -24,11 +24,11 @@ namespace PowerSystem.Effects
 
 	public class AddForceEffectCreator : EffectCreator<AddForceEffect>
 	{
-		public static new string name = "Jump";
-		public static new string description = "Makes the character hop in the air. Duh.";		
+		public static new string name = "Push/Pull";
+		public static new string description = "Applies an amount of kinectic energy to the affected body.";
 		public static Dictionary<string, string> statDescriptions = new Dictionary<string, string>
 		{
-			{ "Magnitude", "How much force is applied at the target."},			
+			{ "Magnitude", "How much force is applied at the target."},
 		};
 
 		public AddForceEffectCreator()

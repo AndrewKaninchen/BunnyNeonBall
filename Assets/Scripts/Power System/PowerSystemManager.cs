@@ -8,9 +8,10 @@ namespace PowerSystem
 {
 	public static class Manager
 	{		
-		public static List<Type> powerCreatorTypes;
 		public static List<Type> powerTypes;
 		public static List<Type> effectTypes;
+		public static List<Type> powerCreatorTypes;
+		public static List<Type> effectCreatorTypes;
 
 		public static void Initialize()
 		{
@@ -23,6 +24,16 @@ namespace PowerSystem
 				assembly.GetTypes().Where(
 					t => t.BaseType != null && t.BaseType.IsGenericType && t.IsSubclassOf(typeof(PowerCreator)) && !t.IsAbstract)
 			);
+			effectCreatorTypes = new List<Type>
+			(
+				assembly.GetTypes().Where(
+					t => t.BaseType != null && t.BaseType.IsGenericType && t.IsSubclassOf(typeof(EffectCreator)) && !t.IsAbstract)
+			);
+
+			foreach (var v in effectCreatorTypes)
+			{
+				Debug.Log(v);
+			}
 		}
 	}
 }

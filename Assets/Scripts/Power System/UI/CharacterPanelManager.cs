@@ -29,11 +29,13 @@ namespace PowerSystem.UI
 		[SerializeField]	private GameObject powerListPanelPrefab;
 		[SerializeField]	private GameObject availableActionsPanelPrefab;
 		[SerializeField]	private GameObject powerClassListPanelPrefab;
+		[SerializeField]	private GameObject effectClassListPanelPrefab;
 
 		[HideInInspector]	public GameObject previewPanel;
 		[HideInInspector]	public GameObject powerListPanel;
 		[HideInInspector]	public GameObject availableActionsPanel;		
 		[HideInInspector]	public GameObject powerClassListPanel;
+		[HideInInspector]	public GameObject effectClassListPanel;
 
 		private Character character;
 
@@ -60,24 +62,28 @@ namespace PowerSystem.UI
 
 			joinPanel.SetActive(false);
 
-			previewPanel = Instantiate(previewPanelPrefab);
-			previewPanel.transform.SetParent(transform);
+			previewPanel = Instantiate(previewPanelPrefab, transform);
+			//previewPanel.transform.SetParent(transform);
 
 			character = previewPanel.GetComponentInChildren<Character>();
 
-			powerListPanel = Instantiate(powerListPanelPrefab);
-			powerListPanel.transform.SetParent(transform);
+			powerListPanel = Instantiate(powerListPanelPrefab, transform);
+			//powerListPanel.transform.SetParent(transform);
 
-			powerClassListPanel = Instantiate(powerClassListPanelPrefab);
-			powerClassListPanel.transform.SetParent(transform);
+			powerClassListPanel = Instantiate(powerClassListPanelPrefab, transform);
+			//powerClassListPanel.transform.SetParent(transform);
 
-			availableActionsPanel = Instantiate(availableActionsPanelPrefab);
-			availableActionsPanel.transform.SetParent(transform);
+			effectClassListPanel = Instantiate(effectClassListPanelPrefab, transform);
+			//effectClassListPanel.transform.SetParent(transform);
+
+			availableActionsPanel = Instantiate(availableActionsPanelPrefab, transform);
+			//availableActionsPanel.transform.SetParent(transform);
 
 			namePanel.GetComponent<NamePanelManager>().Initialize(this);
 			previewPanel.GetComponent<PreviewPanelManager>().Initialize(this);
 			powerListPanel.GetComponent<PowerListPanelManager>().Initialize(this);
-			powerClassListPanel.GetComponent<PowerClassListPanelManager>().Initialize(this);			
+			powerClassListPanel.GetComponent<PowerClassListPanelManager>().Initialize(this);
+			effectClassListPanel.GetComponent<EffectClassListPanelManager>().Initialize(this);
 
 			isInitialized = true;
 		}

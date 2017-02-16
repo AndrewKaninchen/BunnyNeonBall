@@ -126,7 +126,7 @@
     <Compile Include="Assets\Scripts\Power System\Character.cs" />
     <Compile Include="Assets\Scripts\Power System\Effect.cs" />
     <Compile Include="Assets\Scripts\Power System\EffectCreator.cs" />
-    <Compile Include="Assets\Scripts\Power System\Effects\AddForceEffect.cs" />
+    <Compile Include="Assets\Scripts\Power System\Effects\AddForce\AddForceEffect.cs" />
     <Compile Include="Assets\Scripts\Power System\Effects\Damage.cs" />
     <Compile Include="Assets\Scripts\Power System\Effects\Destroy.cs" />
     <Compile Include="Assets\Scripts\Power System\InputManager.cs" />
@@ -147,6 +147,8 @@
     <Compile Include="Assets\Scripts\Power System\UI\AddNewPowerPanelManager.cs" />
     <Compile Include="Assets\Scripts\Power System\UI\AddNewPowerPanelManager2.cs" />
     <Compile Include="Assets\Scripts\Power System\UI\CharacterPanelManager.cs" />
+    <Compile Include="Assets\Scripts\Power System\UI\EffectClassListPanelManager.cs" />
+    <Compile Include="Assets\Scripts\Power System\UI\EffectClassPanelManager.cs" />
     <Compile Include="Assets\Scripts\Power System\UI\EffectParameterSetterPanelManager.cs" />
     <Compile Include="Assets\Scripts\Power System\UI\EnumParameterSetterPanelManager.cs" />
     <Compile Include="Assets\Scripts\Power System\UI\IntParameterSetterPanelManager.cs" />

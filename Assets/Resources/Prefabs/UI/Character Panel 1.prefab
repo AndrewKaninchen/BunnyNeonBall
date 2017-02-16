@@ -334,6 +334,7 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 5
+  inputModule: {fileID: 0}
 --- !u!114 &114407895558789380
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -572,10 +573,13 @@ MonoBehaviour:
     type: 2}
   powerClassListPanelPrefab: {fileID: 1062735008316174, guid: 8da3de92e89fad64b82b9756ceb25d97,
     type: 2}
+  effectClassListPanelPrefab: {fileID: 1062735008316174, guid: c5926a2f15999fe42814564f3b79fa4d,
+    type: 2}
   previewPanel: {fileID: 0}
   powerListPanel: {fileID: 0}
   availableActionsPanel: {fileID: 0}
   powerClassListPanel: {fileID: 0}
+  effectClassListPanel: {fileID: 0}
 --- !u!114 &114917799766256572
 MonoBehaviour:
   m_ObjectHideFlags: 1

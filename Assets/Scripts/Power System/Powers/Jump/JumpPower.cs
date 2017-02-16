@@ -9,7 +9,7 @@ namespace PowerSystem.Powers
 	public class JumpPower : Power
 	{
 		public float jumpForce;
-		public int jumpAmount;
+		public int jumpAmount;		
 	}
 
 	public class JumpPowerCreator : PowerCreator<JumpPower, JumpPowerController>

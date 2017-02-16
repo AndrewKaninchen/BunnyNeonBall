@@ -11,8 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 661e3e39d6eda2d4097ef33ab1ba15dd, type: 3}
   m_Name: Very Big Jump
   m_EditorClassIdentifier: 
-  baseCostPerGraduation: 0
-  maxGraduations: 0
   activationKey: A
   jumpForce: 650
   jumpAmount: 1
