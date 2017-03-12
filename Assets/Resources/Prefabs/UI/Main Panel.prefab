@@ -40,9 +40,9 @@ GameObject:
   - component: {fileID: 222000011296600398}
   - component: {fileID: 114000010505064958}
   - component: {fileID: 114000014034307616}
-  - component: {fileID: 114000013208760076}
   - component: {fileID: 223860698437195342}
   - component: {fileID: 114602593649043410}
+  - component: {fileID: 114000013208760076}
   m_Layer: 5
   m_Name: Main Panel
   m_TagString: Untagged
@@ -570,6 +570,13 @@ MonoBehaviour:
     type: 2}
   availableActionsPanelPrefab: {fileID: 1956795499025308, guid: 49e0a06afc6e30543bd781cfbadeb4e4,
     type: 2}
+  powerClassListPanelPrefab: {fileID: 0}
+  effectClassListPanelPrefab: {fileID: 0}
+  previewPanel: {fileID: 0}
+  powerListPanel: {fileID: 0}
+  availableActionsPanel: {fileID: 0}
+  powerClassListPanel: {fileID: 0}
+  effectClassListPanel: {fileID: 0}
 --- !u!114 &114602593649043410
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -701,6 +708,7 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 5
+  inputModule: {fileID: 0}
 --- !u!114 &114734384679495282
 MonoBehaviour:
   m_ObjectHideFlags: 1

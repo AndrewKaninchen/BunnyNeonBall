@@ -100,7 +100,7 @@ namespace PowerSystem.UI
 
 				foreach (GameObject powerPanel in powerListPanel.GetComponent<PowerListPanelManager>().powerPanels)
 				{
-					PowerPanelManager panelManager = powerPanel.GetComponent<PowerPanelManager>();						
+					PowerPanelManager panelManager = powerPanel.GetComponent<PowerPanelManager>();
 					Type controllerType = panelManager.powerCreator.GetType().BaseType.GetGenericArguments()[1];
 					PowerController powerController = character.gameObject.AddComponent(controllerType) as PowerController;
 					Power power = powerController.Power = panelManager.UpdatePower();

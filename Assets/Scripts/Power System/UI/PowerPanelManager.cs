@@ -42,7 +42,7 @@ namespace PowerSystem.UI
 
 			foreach (Stat stat in powerCreator.stats)
 			{				
-				GameObject parameterPanel = Instantiate(parameterPanelPrefab, transform.FindChild("Parameters Panel")) as GameObject;
+				GameObject parameterPanel = Instantiate(parameterPanelPrefab, transform.FindChild("Parameters List Panel")) as GameObject;
 				parameterPanel.GetComponent<PowerParameterPanelManager>().Initialize(eventSystem, gameObject, stat);				
 				parameterPanels.Add(parameterPanel);				
 			}
@@ -50,7 +50,7 @@ namespace PowerSystem.UI
 
 		public void OnToggle(bool data)
 		{
-			GameObject p0 = transform.FindChild("Parameters Panel").GetChild(0).gameObject;
+			GameObject p0 = transform.FindChild("Parameters List Panel").GetChild(0).gameObject;
 			eventSystem.SetSelectedGameObject(p0, null);
 		}
 

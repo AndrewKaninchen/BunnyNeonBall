@@ -32,7 +32,7 @@ namespace PowerSystem.UI
 			addNewPowerPanel = Instantiate(addNewPowerPanelPrefab);
 			addNewPowerPanel.transform.SetParent(transform.GetChild(0)); //Bug maroto que faz o treco não aparecer me forçou a usar o jeito errado		
 
-			addNewPowerPanel.GetComponent<AddNewPowerPanelManager2>().Initialize(this, characterPanelManager);
+			addNewPowerPanel.GetComponent<AddNewPowerPanelManager>().Initialize(this, characterPanelManager);
 			powerPanels = new List<GameObject>();
 			scrollRect = GetComponent<ScrollRect>();			
 		}

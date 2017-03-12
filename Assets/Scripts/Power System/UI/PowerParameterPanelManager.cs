@@ -1,30 +1,30 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using System.Collections;
-using System.Collections.Generic;
 using Utilities;
-using System;
 
 namespace PowerSystem.UI
 {
-	public class PowerParameterPanelManager : MonoBehaviour, IMoveHandler, ICancelHandler
+	public class PowerParameterPanelManager : MonoBehaviour, IMoveHandler, ICancelHandler, ISubmitHandler, ISelectHandler
 	{
 		private MyEventSystem eventSystem;
-		private EventTrigger eventTrigger;
+		private EventTrigger eventTrigger;		
 		public GameObject innerPanel;
 		public GameObject namePanel;
+		public GameObject effectParametersListPanel;
 		private GameObject powerPanel;
 		private ParameterSetterPanelManager parameterSetterPanelManager;
 		
 		public Stat stat;
-
 		public GameObject parameterSetterPanelPrefab;
-        //private IntParameterSetterPanelManager parameterSetterPanelManager;
+		public GameObject parameterPanelPrefab;		
 
 		public void Initialize (MyEventSystem eventSystem, GameObject powerPanel, Stat stat)
-		{
+		{			
 			this.stat = stat;			
 			this.eventSystem = eventSystem;
 			this.powerPanel = powerPanel;
@@ -37,7 +37,7 @@ namespace PowerSystem.UI
 			if (genericStatType == typeof(int))
 			{				
 				parameterSetterPanelManager =  g.AddComponent<IntParameterSetterPanelManager>();				
-				parameterSetterPanelManager.Initialize(stat, 1, 10, 1);
+				((IntParameterSetterPanelManager)parameterSetterPanelManager).Initialize(eventSystem, stat, 1, 10, 1);
 			}
 			else if (genericStatType == typeof(bool))
 			{
@@ -46,17 +46,21 @@ namespace PowerSystem.UI
 			else if (genericStatType.IsEnum)
 			{				
 				parameterSetterPanelManager = g.AddComponent<EnumParameterSetterPanelManager>();
-				((EnumParameterSetterPanelManager)parameterSetterPanelManager).Initialize(stat, genericStatType);
+				((EnumParameterSetterPanelManager)parameterSetterPanelManager).Initialize(eventSystem, stat, genericStatType);
 			}
 			else if (genericStatType == typeof(Effect))
 			{			
 				parameterSetterPanelManager = g.AddComponent<EffectParameterSetterPanelManager>();
-				((EffectParameterSetterPanelManager)parameterSetterPanelManager).Initialize(stat);
+				EffectClassListPanelManager effectClassListPanelManager = eventSystem.GetComponent<CharacterPanelManager>().effectClassListPanel.GetComponent<EffectClassListPanelManager>();
+				PowerListPanelManager powerListPanelManager = eventSystem.GetComponent<CharacterPanelManager>().powerListPanel.GetComponent<PowerListPanelManager>();
+				((EffectParameterSetterPanelManager)parameterSetterPanelManager).Initialize(
+					eventSystem, stat, this, effectClassListPanelManager, powerListPanelManager, effectParametersListPanel, parameterPanelPrefab
+				);
 			}
 		}
 
 		public void OnCancel(BaseEventData eventData)
-		{			
+		{
 			powerPanel.GetComponent<Toggle>().isOn = false;
 			eventSystem.SetSelectedGameObject(powerPanel, eventData);
 		}
@@ -64,14 +68,23 @@ namespace PowerSystem.UI
 		public void OnMove (AxisEventData eventData)
 		{
 			if (parameterSetterPanelManager.isActiveAndEnabled)
-			{		
-				parameterSetterPanelManager.ParameterValue +=
-				(
-					eventData.moveDir == MoveDirection.Right ? 1 :
-					eventData.moveDir == MoveDirection.Left ? -1 :
-					0
-				);								
+			{
+				parameterSetterPanelManager.OnMove(eventData);						
 			}
-		}	
+		}
+
+		public void OnSubmit(BaseEventData eventData)
+		{
+			if (parameterSetterPanelManager.GetComponent<Selectable>()!= null)
+			{
+				eventSystem.SetSelectedGameObject(parameterSetterPanelManager.gameObject);
+				effectParametersListPanel.SetActive(true);
+			}
+		}
+
+		public void OnSelect(BaseEventData eventData)
+		{
+			effectParametersListPanel.SetActive(false);
+		}
 	}
 }

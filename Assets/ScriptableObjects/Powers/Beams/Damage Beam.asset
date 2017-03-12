@@ -15,4 +15,4 @@ MonoBehaviour:
   rateOfFire: 0
   direction: 12
   range: 50
-  effect: {fileID: 11400000, guid: 574f176abd29c82418b63bba979988c7, type: 2}
+  effect: {fileID: 11400000, guid: 15457d731122c17499be064e6dee2591, type: 2}

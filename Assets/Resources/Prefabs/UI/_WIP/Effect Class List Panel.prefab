@@ -279,7 +279,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectClassPanels: []
-  effectClassPanelPrefab: {fileID: 0}
+  effectClassPanelPrefab: {fileID: 1400940424071298, guid: b5002eff7be065a4ea13c1659f77ccb9,
+    type: 2}
   characterPanelManager: {fileID: 0}
 --- !u!222 &222564461375479796
 CanvasRenderer:

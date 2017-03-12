@@ -16,62 +16,50 @@ namespace PowerSystem.UI
 	public class AddNewPowerPanelManager : MonoBehaviour, ISubmitHandler, ICancelHandler
 	{
 		private PowerListPanelManager powerListPanelManager;
+		private PowerClassListPanelManager powerClassListPanelManager;
 		private ScrollRect powerListScrollRect;
 		[HideInInspector]
-		public MyEventSystem eventSystem;
-		[HideInInspector]
 		public CharacterPanelManager characterPanelManager;
+		[HideInInspector]
+		public MyEventSystem eventSystem;
 
-		public GameObject textPanel;
-		public AddNewPowerDropdownManager dropdownManager;
-		private Dropdown dropdown;
-
-
-		public void Initialize(PowerListPanelManager powerListPanelManager)
+		public void Initialize(PowerListPanelManager powerListPanelManager, CharacterPanelManager characterPanelManager)
 		{
-			characterPanelManager = powerListPanelManager.characterPanelManager;
-			eventSystem = powerListPanelManager.eventSystem;
+			this.characterPanelManager = characterPanelManager;
+			eventSystem = characterPanelManager.eventSystem;
 			this.powerListPanelManager = powerListPanelManager;
-			powerListScrollRect = GetComponentInParent<ScrollRect>();
-			dropdown = dropdownManager.gameObject.GetComponent<Dropdown>();
-			dropdownManager.Initialize(this);
+			powerClassListPanelManager = characterPanelManager.powerClassListPanel.GetComponent<PowerClassListPanelManager>();
 
-			dropdown.onValueChanged.AddListener(OnDropdownChangedValue);
+			powerListScrollRect = GetComponentInParent<ScrollRect>();			
 		}
 
 		public void OnSubmit(BaseEventData eventData)
 		{
-			textPanel.SetActive(false);
-			dropdownManager.gameObject.SetActive(true);
-			eventSystem.SetSelectedGameObject(dropdownManager.gameObject);
-			dropdown.OnSubmit(eventData);
+			powerClassListPanelManager.gameObject.SetActive(true);
+			eventSystem.SetSelectedGameObject(powerClassListPanelManager.powerClassPanels.First());
+			powerClassListPanelManager.GetComponentInChildren<HierarchyNavigationGroup>().childrenExitTarget = GetComponent<Selectable>();
+			powerListPanelManager.gameObject.SetActive(false);			
 		}
 
-		public void OnDropdownChangedValue(int n)
+		IEnumerator SetScrollRectPosition()
 		{
-			Type pigT = Manager.powerCreatorTypes[dropdown.value];
-			Type piT = Manager.powerTypes[dropdown.value];
-									
-			var addPowerMethod = typeof(PowerListPanelManager).GetMethod("AddPower");
-			var addPowerMethodInstance = addPowerMethod.MakeGenericMethod(pigT, piT);
-			addPowerMethodInstance.Invoke(powerListPanelManager, null);
-			
-			
+			yield return null;
 			powerListScrollRect.verticalNormalizedPosition = 0;
-
-			OnDropDownCancel();
 		}
 
-		public void OnDropDownCancel()
+		public void AddPower(int powerClassID)
 		{
-			eventSystem.SetSelectedGameObject(gameObject);
-			textPanel.SetActive(true);			
+			Type powerCreatorType = Manager.powerCreatorTypes[powerClassID];
+			PowerCreator powerCreator = (PowerCreator)Activator.CreateInstance(powerCreatorType);
+
+			powerListPanelManager.AddPower(powerCreator);
+			StartCoroutine("SetScrollRectPosition");			
 		}
 
 		public void OnCancel(BaseEventData eventData)
-		{
+		{			
 			eventSystem.SetSelectedGameObject(powerListPanelManager.gameObject);
 			powerListScrollRect.verticalNormalizedPosition = 1;
-		}
+		}		
 	}
 }

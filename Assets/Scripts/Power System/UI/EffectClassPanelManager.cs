@@ -49,7 +49,7 @@ namespace PowerSystem.UI
 		public void OnSubmit(BaseEventData eventData)
 		{
 			OnCancel(eventData);
-			//hierarchyNavigationGroup.childrenExitTarget.GetComponent<AddNewPowerPanelManager2>().AddPower(classID);			
+			hierarchyNavigationGroup.childrenExitTarget.GetComponentInChildren<EffectParameterSetterPanelManager>().ParameterValue = classID;
 		}
 
 		public void OnCancel(BaseEventData eventData)
