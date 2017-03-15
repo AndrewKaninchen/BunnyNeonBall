@@ -47,16 +47,25 @@ namespace PowerSystem.UI
 			effectCreator = (EffectCreator) Activator.CreateInstance(Manager.effectCreatorTypes[currentValue]);
 
 			for (int i = 0; i < effectParametersListPanel.transform.childCount; i++)
-			{
-				Destroy(effectParametersListPanel.transform.GetChild(i).gameObject);
+			{				
+				Destroy(effectParametersListPanel.transform.GetChild(i).gameObject);				
 			}
-			
+			effectParametersListPanel.transform.DetachChildren();
 			foreach (Stat s in effectCreator.stats)
 			{
-				GameObject parameterPanel = Instantiate(parameterPanelPrefab, effectParametersListPanel.transform) as GameObject;
-				//parameterPanel.GetComponent<EffectParameterPanelManager>().Initialize(eventSystem, gameObject, stat);
-				//effectParametersListPanel.Add(parameterPanel);
+				GameObject parameterPanel = Instantiate(parameterPanelPrefab, effectParametersListPanel.transform) as GameObject;				
+				parameterPanel.GetComponent<PowerParameterPanelManager>().Initialize(eventSystem, null, s);
+				//.Add(parameterPanel);
 			}
+
+			Navigation nav = new Navigation();
+			Selectable firstParSel = effectParametersListPanel.transform.GetChild(0).GetComponent<Selectable>();
+			nav.mode = Navigation.Mode.Explicit;
+			nav.selectOnDown = firstParSel;
+			GetComponent<Selectable>().navigation = nav;
+
+			firstParSel.GetComponent<HierarchyNavigationElement>().overridePreviousTarget = true;
+			firstParSel.GetComponent<HierarchyNavigationElement>().previousTarget = GetComponent<Selectable>();			
 		}
 
 		public void OnSubmit(BaseEventData eventData)
@@ -65,10 +74,6 @@ namespace PowerSystem.UI
 			eventSystem.SetSelectedGameObject(effectClassListPanelManager.effectClassPanels[0]);
 			effectClassListPanelManager.GetComponentInChildren<HierarchyNavigationGroup>().childrenExitTarget = GetComponentInParent<Selectable>();
 			powerListPanelManager.gameObject.SetActive(false);
-		}
-
-		public override void OnMove(AxisEventData eventData)
-		{
 		}		
 	}
 }

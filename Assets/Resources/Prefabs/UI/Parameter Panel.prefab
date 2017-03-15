@@ -178,9 +178,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   innerPanel: {fileID: 1153526955697828}
   namePanel: {fileID: 1000011369230678}
-  effectParametersPanel: {fileID: 1096372666202184}
+  effectParametersListPanel: {fileID: 1096372666202184}
   parameterSetterPanelPrefab: {fileID: 1000010212559558, guid: a3a036e8bbe084a4488026368a52b636,
     type: 2}
+  parameterPanelPrefab: {fileID: 1000012632464638}
 --- !u!114 &114000012400684116
 MonoBehaviour:
   m_ObjectHideFlags: 1

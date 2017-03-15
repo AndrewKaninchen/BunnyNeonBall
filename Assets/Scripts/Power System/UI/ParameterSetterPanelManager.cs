@@ -48,6 +48,8 @@ namespace PowerSystem.UI
 
 		public virtual void OnMove(AxisEventData eventData)
 		{
+			if (eventData.moveDir == MoveDirection.Up || eventData.moveDir == MoveDirection.Down)
+				return;		
 			ParameterValue +=
 				(
 					eventData.moveDir == MoveDirection.Right ? 1 :

@@ -21,7 +21,7 @@ namespace Utilities
 
 		private List<Selectable> hierarchyNavigationElements = new List<Selectable>();
 
-		private void UpdateHierarchyNavigationElements()
+		public void UpdateHierarchyNavigationElements()
 		{
 			foreach (Selectable sel in hierarchyNavigationElements)
 				sel.navigation = Navigation.defaultNavigation;
@@ -42,23 +42,59 @@ namespace Utilities
 		{
 			for (int i = 0; i < hierarchyNavigationElements.Count; i++)
 			{
+				HierarchyNavigationElement ele = hierarchyNavigationElements[i].GetComponent<HierarchyNavigationElement>();
 				Navigation nav = new Navigation();
 				nav.mode = Navigation.Mode.Explicit;
 
 				if (i + 1 < hierarchyNavigationElements.Count)
 				{
 					if (mode == Mode.Vertical)
-						nav.selectOnDown = hierarchyNavigationElements[i + 1];
+					{
+						if (ele.overrideNextTarget)
+							nav.selectOnDown = ele.nextTarget;
+						else
+							nav.selectOnDown = hierarchyNavigationElements[i + 1];
+						
+
+					}
 					else
-						nav.selectOnRight = hierarchyNavigationElements[i + 1];
+						if (ele.overrideNextTarget)
+							nav.selectOnRight = ele.nextTarget;
+						else
+							nav.selectOnRight = hierarchyNavigationElements[i + 1];
 				}
 
 				if (i > 0)
 				{
 					if (mode == Mode.Vertical)
-						nav.selectOnUp = hierarchyNavigationElements[i - 1];
+						if (ele.overridePreviousTarget)
+							nav.selectOnUp = ele.previousTarget;
+						else
+							nav.selectOnUp = hierarchyNavigationElements[i - 1];
 					else
-						nav.selectOnLeft = hierarchyNavigationElements[i - 1];
+						if (ele.overridePreviousTarget)
+							nav.selectOnLeft = ele.previousTarget;
+						else
+							nav.selectOnLeft = hierarchyNavigationElements[i - 1];
+				}
+
+				if (i == 0)
+				{
+					if (mode == Mode.Vertical)
+					{
+						if (ele.overridePreviousTarget)
+							nav.selectOnUp = ele.previousTarget;
+						if (ele.overrideNextTarget)
+							nav.selectOnDown = ele.nextTarget;
+					}
+					else
+					{
+						if (ele.overridePreviousTarget)
+							nav.selectOnLeft = ele.previousTarget;
+						if (ele.overrideNextTarget)
+							nav.selectOnRight = ele.nextTarget;
+					}
+
 				}
 
 				hierarchyNavigationElements[i].navigation = nav;

@@ -13,12 +13,17 @@ namespace Utilities
 		{
 			HierarchyNavigationElement myTarget = (HierarchyNavigationElement)target;
 			myTarget.overrideExitTarget = EditorGUILayout.Toggle("Override Exit Target", myTarget.overrideExitTarget);
-			if (myTarget.overrideExitTarget)
-			{
+			myTarget.overrideNextTarget = EditorGUILayout.Toggle("Override Next Target", myTarget.overrideNextTarget);
+			myTarget.overridePreviousTarget = EditorGUILayout.Toggle("Override Previous Target", myTarget.overridePreviousTarget);
 
-				myTarget.exitTarget = (Selectable)EditorGUILayout.ObjectField("Exit Target", target, typeof(Selectable), true);
-				//myTarget.exitTo = EditorGUILayout.
-			}
+			if (myTarget.overrideExitTarget)			
+				myTarget.exitTarget = (Selectable)EditorGUILayout.ObjectField("Exit Target", myTarget.exitTarget, typeof(Selectable), false);			
+			
+			if (myTarget.overrideNextTarget)
+				myTarget.nextTarget = (Selectable)EditorGUILayout.ObjectField("Next Target", myTarget.nextTarget, typeof(Selectable), false);				
+			
+			if (myTarget.overridePreviousTarget)
+				myTarget.previousTarget = (Selectable)EditorGUILayout.ObjectField("Previous Target", myTarget.previousTarget, typeof(Selectable), false);				
 		}
 	}
 }

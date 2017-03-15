@@ -61,8 +61,11 @@ namespace PowerSystem.UI
 
 		public void OnCancel(BaseEventData eventData)
 		{
-			powerPanel.GetComponent<Toggle>().isOn = false;
-			eventSystem.SetSelectedGameObject(powerPanel, eventData);
+			if (powerPanel != null)
+			{
+				powerPanel.GetComponent<Toggle>().isOn = false;
+				eventSystem.SetSelectedGameObject(powerPanel, eventData);
+			}
 		}
 
 		public void OnMove (AxisEventData eventData)

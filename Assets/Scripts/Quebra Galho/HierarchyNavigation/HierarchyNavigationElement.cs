@@ -15,7 +15,11 @@ namespace Utilities
 		private EventSystem eventSystem;
 		private HierarchyNavigationGroup group;
 		public bool overrideExitTarget = false;
+		public bool overridePreviousTarget = false;
+		public bool overrideNextTarget = false;
 		public Selectable exitTarget;
+		public Selectable previousTarget;
+		public Selectable nextTarget;
 
 		void OnEnable()
 		{

@@ -11,7 +11,6 @@ namespace PowerSystem.UI
 {
 	public class PowerPanelManager : MonoBehaviour, IMoveHandler, ICancelHandler, IDeleteHandler
 	{
-		private List<GameObject> parameterPanels = new List<GameObject>();
 		private MyEventSystem eventSystem;
 
 		public Sprite spriteAButton;
@@ -44,7 +43,6 @@ namespace PowerSystem.UI
 			{				
 				GameObject parameterPanel = Instantiate(parameterPanelPrefab, transform.FindChild("Parameters List Panel")) as GameObject;
 				parameterPanel.GetComponent<PowerParameterPanelManager>().Initialize(eventSystem, gameObject, stat);				
-				parameterPanels.Add(parameterPanel);				
 			}
 		}	
 
