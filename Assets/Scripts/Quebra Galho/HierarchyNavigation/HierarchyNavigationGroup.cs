@@ -38,7 +38,7 @@ namespace Utilities
 			}
 		}
 
-		private void OrganizeHierarchyNavigation()
+		public void OrganizeHierarchyNavigation()
 		{
 			for (int i = 0; i < hierarchyNavigationElements.Count; i++)
 			{
@@ -50,7 +50,7 @@ namespace Utilities
 				{
 					if (mode == Mode.Vertical)
 					{
-						if (ele.overrideNextTarget)
+						if (ele.OverrideNextTarget)
 							nav.selectOnDown = ele.nextTarget;
 						else
 							nav.selectOnDown = hierarchyNavigationElements[i + 1];
@@ -58,7 +58,7 @@ namespace Utilities
 
 					}
 					else
-						if (ele.overrideNextTarget)
+						if (ele.OverrideNextTarget)
 							nav.selectOnRight = ele.nextTarget;
 						else
 							nav.selectOnRight = hierarchyNavigationElements[i + 1];
@@ -67,12 +67,12 @@ namespace Utilities
 				if (i > 0)
 				{
 					if (mode == Mode.Vertical)
-						if (ele.overridePreviousTarget)
+						if (ele.OverridePreviousTarget)
 							nav.selectOnUp = ele.previousTarget;
 						else
 							nav.selectOnUp = hierarchyNavigationElements[i - 1];
 					else
-						if (ele.overridePreviousTarget)
+						if (ele.OverridePreviousTarget)
 							nav.selectOnLeft = ele.previousTarget;
 						else
 							nav.selectOnLeft = hierarchyNavigationElements[i - 1];
@@ -82,16 +82,16 @@ namespace Utilities
 				{
 					if (mode == Mode.Vertical)
 					{
-						if (ele.overridePreviousTarget)
+						if (ele.OverridePreviousTarget)
 							nav.selectOnUp = ele.previousTarget;
-						if (ele.overrideNextTarget)
+						if (ele.OverrideNextTarget)
 							nav.selectOnDown = ele.nextTarget;
 					}
 					else
 					{
-						if (ele.overridePreviousTarget)
+						if (ele.OverridePreviousTarget)
 							nav.selectOnLeft = ele.previousTarget;
-						if (ele.overrideNextTarget)
+						if (ele.OverrideNextTarget)
 							nav.selectOnRight = ele.nextTarget;
 					}
 
@@ -121,7 +121,7 @@ namespace Utilities
 			foreach (Selectable sel in hierarchyNavigationElements)
 			{
 				HierarchyNavigationElement ele = sel.GetComponent<HierarchyNavigationElement>();
-				if (ele != null && !ele.overrideExitTarget)
+				if (ele != null && !ele.OverrideExitTarget)
 					ele.exitTarget = childrenExitTarget;
 			}
 		}

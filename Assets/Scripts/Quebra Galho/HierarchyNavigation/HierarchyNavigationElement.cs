@@ -14,12 +14,20 @@ namespace Utilities
 	{
 		private EventSystem eventSystem;
 		private HierarchyNavigationGroup group;
-		public bool overrideExitTarget = false;
-		public bool overridePreviousTarget = false;
-		public bool overrideNextTarget = false;
+
+		public bool OverrideExitTarget { get { return overrideExitTarget; } set { overrideExitTarget = value; if(group != null) group.OrganizeHierarchyNavigation(); } }
+		public bool OverridePreviousTarget { get { return overridePreviousTarget; } set { overridePreviousTarget = value; if (group != null) group.OrganizeHierarchyNavigation(); } }
+		public bool OverrideNextTarget { get { return overrideNextTarget; } set { overrideNextTarget = value; if (group != null) group.OrganizeHierarchyNavigation(); } }
+
+
+		private bool overrideExitTarget = false;
+		private bool overridePreviousTarget = false;
+		private bool overrideNextTarget = false;
 		public Selectable exitTarget;
 		public Selectable previousTarget;
 		public Selectable nextTarget;
+
+		public HierarchyNavigationGroup Group { get { return group; } }
 
 		void OnEnable()
 		{

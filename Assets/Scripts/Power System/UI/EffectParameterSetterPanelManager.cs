@@ -6,8 +6,9 @@ using Utilities;
 
 namespace PowerSystem.UI
 {
-	public class EffectParameterSetterPanelManager : ParameterSetterPanelManager, ISubmitHandler, ICancelHandler
+	public class EffectParameterSetterPanelManager : ParameterSetterPanelManager, ISubmitHandler
 	{
+		
 		private EffectClassListPanelManager effectClassListPanelManager;		
 		private PowerListPanelManager powerListPanelManager;
 		private PowerParameterPanelManager powerParameterPanelManager;
@@ -15,6 +16,8 @@ namespace PowerSystem.UI
 
 		private EffectCreator effectCreator;
 		private GameObject parameterPanelPrefab;
+
+		private Selectable sel;
 
 		public override int ParameterValue { get { return currentValue; } set { currentValue = Mathf.Clamp(value, minValue, maxValue); UpdateText(); UpdateCreatorStat(); } }
 
@@ -28,10 +31,12 @@ namespace PowerSystem.UI
 			this.effectClassListPanelManager = effectClassListPanelManager;
 			this.parameterPanelPrefab = parameterPanelPrefab;
 			minValue = 0;
-			maxValue = Manager.effectTypes.Count-1;			
+			maxValue = Manager.effectTypes.Count-1;	
+
+			sel = GetComponent<Selectable>();
 			ParameterValue = 0;
 		}
-				
+
 		public new void UpdateText()
 		{
 			if (isInitialized)
@@ -42,30 +47,34 @@ namespace PowerSystem.UI
 
 		public new void UpdateCreatorStat()
 		{
-			stat.GetType().GetField("value").SetValue(stat, ScriptableObject.CreateInstance(Manager.effectTypes[currentValue]));
-
-			effectCreator = (EffectCreator) Activator.CreateInstance(Manager.effectCreatorTypes[currentValue]);
-
-			for (int i = 0; i < effectParametersListPanel.transform.childCount; i++)
-			{				
-				Destroy(effectParametersListPanel.transform.GetChild(i).gameObject);				
-			}
-			effectParametersListPanel.transform.DetachChildren();
-			foreach (Stat s in effectCreator.stats)
+			if (isInitialized)
 			{
-				GameObject parameterPanel = Instantiate(parameterPanelPrefab, effectParametersListPanel.transform) as GameObject;				
-				parameterPanel.GetComponent<PowerParameterPanelManager>().Initialize(eventSystem, null, s);
-				//.Add(parameterPanel);
+				stat.GetType().GetField("value").SetValue(stat, ScriptableObject.CreateInstance(Manager.effectTypes[currentValue]));
+
+				effectCreator = (EffectCreator)Activator.CreateInstance(Manager.effectCreatorTypes[currentValue]);
+
+				for (int i = 0; i < effectParametersListPanel.transform.childCount; i++)
+				{
+					Destroy(effectParametersListPanel.transform.GetChild(i).gameObject);
+				}
+				effectParametersListPanel.transform.DetachChildren();
+				foreach (Stat s in effectCreator.stats)
+				{
+					GameObject parameterPanel = Instantiate(parameterPanelPrefab, effectParametersListPanel.transform) as GameObject;
+					parameterPanel.GetComponent<PowerParameterPanelManager>().Initialize(eventSystem, null, s);
+					//.Add(parameterPanel);
+				}
+
+				Navigation nav = new Navigation();
+				Selectable firstParSel = effectParametersListPanel.transform.GetChild(0).GetComponent<Selectable>();
+				nav.mode = Navigation.Mode.Explicit;
+				nav.selectOnDown = firstParSel;
+				sel.navigation = nav;
+
+				var firstParNavElem = firstParSel.GetComponent<HierarchyNavigationElement>();				
+				firstParNavElem.previousTarget = GetComponent<Selectable>();
+				firstParNavElem.OverridePreviousTarget = true;
 			}
-
-			Navigation nav = new Navigation();
-			Selectable firstParSel = effectParametersListPanel.transform.GetChild(0).GetComponent<Selectable>();
-			nav.mode = Navigation.Mode.Explicit;
-			nav.selectOnDown = firstParSel;
-			GetComponent<Selectable>().navigation = nav;
-
-			firstParSel.GetComponent<HierarchyNavigationElement>().overridePreviousTarget = true;
-			firstParSel.GetComponent<HierarchyNavigationElement>().previousTarget = GetComponent<Selectable>();			
 		}
 
 		public void OnSubmit(BaseEventData eventData)
@@ -74,6 +83,12 @@ namespace PowerSystem.UI
 			eventSystem.SetSelectedGameObject(effectClassListPanelManager.effectClassPanels[0]);
 			effectClassListPanelManager.GetComponentInChildren<HierarchyNavigationGroup>().childrenExitTarget = GetComponentInParent<Selectable>();
 			powerListPanelManager.gameObject.SetActive(false);
-		}		
+		}
+
+		public override void OnMove(AxisEventData eventData)
+		{
+		}
 	}
 }
+
+	

@@ -63,21 +63,11 @@ namespace PowerSystem.UI
 			joinPanel.SetActive(false);
 
 			previewPanel = Instantiate(previewPanelPrefab, transform);
-			//previewPanel.transform.SetParent(transform);
-
 			character = previewPanel.GetComponentInChildren<Character>();
-
 			powerListPanel = Instantiate(powerListPanelPrefab, transform);
-			//powerListPanel.transform.SetParent(transform);
-
 			powerClassListPanel = Instantiate(powerClassListPanelPrefab, transform);
-			//powerClassListPanel.transform.SetParent(transform);
-
 			effectClassListPanel = Instantiate(effectClassListPanelPrefab, transform);
-			//effectClassListPanel.transform.SetParent(transform);
-
 			availableActionsPanel = Instantiate(availableActionsPanelPrefab, transform);
-			//availableActionsPanel.transform.SetParent(transform);
 
 			namePanel.GetComponent<NamePanelManager>().Initialize(this);
 			previewPanel.GetComponent<PreviewPanelManager>().Initialize(this);
@@ -106,6 +96,11 @@ namespace PowerSystem.UI
 					Power power = powerController.Power = panelManager.UpdatePower();
 					power.activationKey = "A";
 				}				
+			}
+
+			if (Input.GetButtonDown("Select" + playerID) && isInitialized)
+			{
+				eventSystem.SetSelectedGameObject(namePanel);
 			}
 		}
 	}
