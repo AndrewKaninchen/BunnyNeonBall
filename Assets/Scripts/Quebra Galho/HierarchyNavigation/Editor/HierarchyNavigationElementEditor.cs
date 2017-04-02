@@ -12,17 +12,17 @@ namespace Utilities
 		public override void OnInspectorGUI()
 		{
 			HierarchyNavigationElement myTarget = (HierarchyNavigationElement)target;
-			myTarget.overrideExitTarget = EditorGUILayout.Toggle("Override Exit Target", myTarget.overrideExitTarget);
-			myTarget.overrideNextTarget = EditorGUILayout.Toggle("Override Next Target", myTarget.overrideNextTarget);
-			myTarget.overridePreviousTarget = EditorGUILayout.Toggle("Override Previous Target", myTarget.overridePreviousTarget);
+			myTarget.OverrideExitTarget = EditorGUILayout.Toggle("Override Exit Target", myTarget.OverrideExitTarget);
+			myTarget.OverrideNextTarget = EditorGUILayout.Toggle("Override Next Target", myTarget.OverrideNextTarget);
+			myTarget.OverridePreviousTarget = EditorGUILayout.Toggle("Override Previous Target", myTarget.OverridePreviousTarget);
 
-			if (myTarget.overrideExitTarget)			
+			if (myTarget.OverrideExitTarget)			
 				myTarget.exitTarget = (Selectable)EditorGUILayout.ObjectField("Exit Target", myTarget.exitTarget, typeof(Selectable), false);			
 			
-			if (myTarget.overrideNextTarget)
+			if (myTarget.OverrideNextTarget)
 				myTarget.nextTarget = (Selectable)EditorGUILayout.ObjectField("Next Target", myTarget.nextTarget, typeof(Selectable), false);				
 			
-			if (myTarget.overridePreviousTarget)
+			if (myTarget.OverridePreviousTarget)
 				myTarget.previousTarget = (Selectable)EditorGUILayout.ObjectField("Previous Target", myTarget.previousTarget, typeof(Selectable), false);				
 		}
 	}
