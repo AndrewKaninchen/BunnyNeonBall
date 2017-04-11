@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 114059185946397240}
   - component: {fileID: 114481617111337672}
   m_Layer: 5
-  m_Name: Add New Power Panel 1
+  m_Name: Add New Power Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -330,8 +330,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dda06492b7d6ad428a925ca66ab52ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  overrideExitTarget: 0
   exitTarget: {fileID: 0}
+  previousTarget: {fileID: 0}
+  nextTarget: {fileID: 0}
 --- !u!222 &222000010920417594
 CanvasRenderer:
   m_ObjectHideFlags: 1

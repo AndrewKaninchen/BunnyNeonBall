@@ -155,8 +155,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dda06492b7d6ad428a925ca66ab52ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  overrideExitTarget: 0
   exitTarget: {fileID: 0}
+  previousTarget: {fileID: 0}
+  nextTarget: {fileID: 0}
 --- !u!114 &114171909191581620
 MonoBehaviour:
   m_ObjectHideFlags: 1

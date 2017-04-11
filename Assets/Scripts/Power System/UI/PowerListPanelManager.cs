@@ -15,9 +15,9 @@ namespace PowerSystem.UI
 		public CharacterPanelManager characterPanelManager;
 		[HideInInspector]
 		public MyEventSystem eventSystem;
-		[SerializeField]
 		private GameObject addNewPowerPanel;
 
+		[HideInInspector]
 		public List<GameObject> powerPanels;
 		[SerializeField]private GameObject powerPanelPrefab;
 		[SerializeField]private GameObject addNewPowerPanelPrefab;

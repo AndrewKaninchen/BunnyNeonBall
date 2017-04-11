@@ -8,34 +8,52 @@ using System;
 
 namespace PowerSystem.UI
 {
-	[RequireComponent (typeof (MyEventSystem))]
+	[RequireComponent(typeof (MyEventSystem))]
 	[RequireComponent(typeof(HierarchyNavigationGroup))]
 	[RequireComponent(typeof(StandaloneInputModule))]
 	public class CharacterPanelManager : MonoBehaviour
 	{
 		[Range(1, 4)]
 		public int playerID;
-
-		public MyEventSystem eventSystem;
+		
 		private MyInputModule inputModule;
 		private HierarchyNavigationGroup navGroup;
 
+		[HideInInspector]	public MyEventSystem eventSystem;
 		[HideInInspector]	public bool isInitialized = false;
 
-		[SerializeField]	private GameObject namePanel;
-		[SerializeField]	private GameObject joinPanel;
+		#region SubPanels
+		[Header("SubPanels")]
+		[SerializeField]
+		private GameObject
+			namePanel;
+		[SerializeField]
+		private GameObject
+			joinPanel;
 
-		[SerializeField]	private GameObject previewPanelPrefab;
-		[SerializeField]	private GameObject powerListPanelPrefab;
-		[SerializeField]	private GameObject availableActionsPanelPrefab;
-		[SerializeField]	private GameObject powerClassListPanelPrefab;
-		[SerializeField]	private GameObject effectClassListPanelPrefab;
+		[HideInInspector]
+		public GameObject
+			previewPanel,
+			powerListPanel,
+			controlSchemePanel,
+			availableActionsPanel,
+			powerClassListPanel,
+			effectClassListPanel;
+		#endregion
 
-		[HideInInspector]	public GameObject previewPanel;
-		[HideInInspector]	public GameObject powerListPanel;
-		[HideInInspector]	public GameObject availableActionsPanel;		
-		[HideInInspector]	public GameObject powerClassListPanel;
-		[HideInInspector]	public GameObject effectClassListPanel;
+		#region Prefabs
+		[Header("Prefabs")]
+		[SerializeField]
+		private GameObject
+			previewPanelPrefab;
+		
+		[SerializeField]    private GameObject			
+			powerListPanelPrefab,
+			controlSchemePanelPrefab,
+			availableActionsPanelPrefab,
+			powerClassListPanelPrefab,
+			effectClassListPanelPrefab;
+		#endregion		
 
 		private Character character;
 
@@ -65,6 +83,7 @@ namespace PowerSystem.UI
 			previewPanel = Instantiate(previewPanelPrefab, transform);
 			character = previewPanel.GetComponentInChildren<Character>();
 			powerListPanel = Instantiate(powerListPanelPrefab, transform);
+			controlSchemePanel = Instantiate(controlSchemePanelPrefab, transform);
 			powerClassListPanel = Instantiate(powerClassListPanelPrefab, transform);
 			effectClassListPanel = Instantiate(effectClassListPanelPrefab, transform);
 			availableActionsPanel = Instantiate(availableActionsPanelPrefab, transform);
@@ -72,6 +91,7 @@ namespace PowerSystem.UI
 			namePanel.GetComponent<NamePanelManager>().Initialize(this);
 			previewPanel.GetComponent<PreviewPanelManager>().Initialize(this);
 			powerListPanel.GetComponent<PowerListPanelManager>().Initialize(this);
+			controlSchemePanel.GetComponent<ControlSchemePanelManager>().Initialize(this);
 			powerClassListPanel.GetComponent<PowerClassListPanelManager>().Initialize(this);
 			effectClassListPanel.GetComponent<EffectClassListPanelManager>().Initialize(this);
 

@@ -26,9 +26,9 @@ GameObject:
   - component: {fileID: 114494301781253060}
   - component: {fileID: 114163908536370248}
   - component: {fileID: 114542203463362728}
-  - component: {fileID: 114953817258821250}
+  - component: {fileID: 114732436250031506}
   m_Layer: 5
-  m_Name: Effect Class List Panel
+  m_Name: Power Class List Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 114273300432889664}
   - component: {fileID: 114100707034442394}
   m_Layer: 5
-  m_Name: Effect Classes List
+  m_Name: Power Classes List
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -247,8 +247,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dda06492b7d6ad428a925ca66ab52ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  overrideExitTarget: 0
   exitTarget: {fileID: 0}
+  previousTarget: {fileID: 0}
+  nextTarget: {fileID: 0}
 --- !u!114 &114553156642867830
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -267,7 +268,7 @@ MonoBehaviour:
   m_PreferredHeight: -1
   m_FlexibleWidth: -1
   m_FlexibleHeight: 1
---- !u!114 &114953817258821250
+--- !u!114 &114732436250031506
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -275,11 +276,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1062735008316174}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfd9a79c85ba9104f97766949f943e9d, type: 3}
+  m_Script: {fileID: 11500000, guid: a66ab7893b9729641806496856c5bc5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectClassPanels: []
-  effectClassPanelPrefab: {fileID: 1400940424071298, guid: b5002eff7be065a4ea13c1659f77ccb9,
+  powerListPowerManager: {fileID: 0}
+  powerClassPanels: []
+  powerClassPanelPrefab: {fileID: 1400940424071298, guid: 9025a1956283c13418143f2e285b2687,
     type: 2}
   characterPanelManager: {fileID: 0}
 --- !u!222 &222564461375479796

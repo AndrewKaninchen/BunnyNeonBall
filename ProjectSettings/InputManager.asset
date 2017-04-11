@@ -1078,7 +1078,7 @@ InputManager:
     axis: 0
     joyNum: 4
   - serializedVersion: 3
-    m_Name: Start4
+    m_Name: Select4
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 

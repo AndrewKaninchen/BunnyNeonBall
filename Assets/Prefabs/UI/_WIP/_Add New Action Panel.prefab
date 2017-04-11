@@ -65,7 +65,7 @@ GameObject:
   - component: {fileID: 223748040530683842}
   - component: {fileID: 114203064064980886}
   m_Layer: 5
-  m_Name: Add New Command Panel
+  m_Name: _Add New Action Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
