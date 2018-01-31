@@ -33,10 +33,10 @@ namespace PowerSystem.Effects
 
 		public AddForceEffectCreator()
 		{
-			effect = ScriptableObject.CreateInstance<AddForceEffect>();
+			Instance = ScriptableObject.CreateInstance<AddForceEffect>();
 			stats = new Stat[]
 			{
-				new Stat<int>("Magnitude", statDescriptions["Magnitude"], value => effect.magnitude = value * 500)
+				new Stat<int>("Magnitude", statDescriptions["Magnitude"], value => Instance.magnitude = value * 500)
 			};
 		}
 	}

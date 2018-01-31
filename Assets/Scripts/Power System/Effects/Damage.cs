@@ -32,10 +32,10 @@ namespace PowerSystem.Effects
 
 		public DamageEffectCreator()
 		{
-			effect = ScriptableObject.CreateInstance<DamageEffect>();
+			Instance = ScriptableObject.CreateInstance<DamageEffect>();
 			stats = new Stat[]
 			{
-				new Stat<int>("Amount", statDescriptions["Magnitude"], value => effect.amount = value * 500)
+				new Stat<int>("Amount", statDescriptions["Magnitude"], value => Instance.amount = value * 500)
 			};
 		}
 	}

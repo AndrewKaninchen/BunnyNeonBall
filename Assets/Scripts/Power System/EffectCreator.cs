@@ -7,5 +7,5 @@ using System.Linq;
 
 
 namespace PowerSystem
-{	
+{
 }

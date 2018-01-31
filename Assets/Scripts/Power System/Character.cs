@@ -69,8 +69,8 @@ namespace PowerSystem
 		// Use this for initialization
 		void Start()
 		{
-			core = transform.FindChild("Core").gameObject;
-			ring = transform.FindChild("Ring").gameObject;
+			core = transform.Find("Core").gameObject;
+			ring = transform.Find("Ring").gameObject;
 			SpriteRenderer coreRenderer = core.GetComponent<SpriteRenderer>();
 			SpriteRenderer ringRenderer = ring.GetComponent<SpriteRenderer>();
 			coreRenderer.material = coreMaterial;

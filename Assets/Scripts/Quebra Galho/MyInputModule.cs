@@ -18,7 +18,7 @@ namespace Utilities
 		[SerializeField]
 		private string m_DeleteButton = "Delete";		
 
-		public string deleteButton
+		public string DeleteButton
 		{
 			get { return m_DeleteButton; }
 			set { m_DeleteButton = value; }
@@ -56,6 +56,4 @@ namespace Utilities
 	{
 		void OnDelete(BaseEventData eventData);
 	}
-
-
 }

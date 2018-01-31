@@ -19,7 +19,7 @@ namespace PowerSystem.Powers
 		void FixedUpdate()
 		{
 			if (character.IsGrounded)
-				jumpsLeft = power.jumpAmount;
+				jumpsLeft = powerInstance.jumpAmount;
 			else if (character.WasGrounded)
 				jumpsLeft--;
 			//Debug.Log("Jumps Left: " + jumpsLeft);	
@@ -27,7 +27,7 @@ namespace PowerSystem.Powers
 
 		void Update()
 		{
-			if (jumpsLeft > 0 && Input.GetButtonDown(power.activationKey + character.playerID))
+			if (jumpsLeft > 0 && Input.GetButtonDown(powerInstance.activationKey + character.playerID))
 			{
 				Trigger();
 			}
@@ -36,7 +36,7 @@ namespace PowerSystem.Powers
 		public void Trigger()
 		{
 			rb.velocity = new Vector2(rb.velocity.x, 0f);
-			rb.AddForce(new Vector2(0, power.jumpForce));
+			rb.AddForce(new Vector2(0, powerInstance.jumpForce));
 			jumpsLeft--;
 		}
 	}

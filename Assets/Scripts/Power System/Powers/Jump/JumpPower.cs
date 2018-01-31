@@ -16,7 +16,7 @@ namespace PowerSystem.Powers
 	{
 		public static new string name = "Jump";
 		public static new string description = "Makes the character hop in the air. Duh.";
-		JumpPowerStats powerStats;
+		//JumpPowerStats powerStats;
 		public static Dictionary<string, string> statDescriptions = new Dictionary<string, string>
 		{
 			{ "Magnitude", "How big is the jump."},
@@ -25,8 +25,9 @@ namespace PowerSystem.Powers
 
 		public JumpPowerCreator()
 		{
-			power = ScriptableObject.CreateInstance<JumpPower>();
-			powerStats = ScriptableObject.CreateInstance<JumpPowerStats>();
+            Instance = ScriptableObject.CreateInstance<JumpPower>();
+            Debug.Log(Instance);
+			//powerStats = ScriptableObject.CreateInstance<JumpPowerStats>();
 			stats = new Stat[]
 			{
 				new Stat<int>
@@ -35,8 +36,8 @@ namespace PowerSystem.Powers
 					statDescriptions["Magnitude"],
 					rating =>
 					{
-						power.jumpForce = rating * 500;
-						powerStats.magnitude = rating;
+                        Instance.jumpForce = rating * 500;
+						//powerStats.magnitude = rating;
 					}
 				),
 				new Stat<int>
@@ -45,8 +46,8 @@ namespace PowerSystem.Powers
 					statDescriptions["Amount"],
 					rating =>
 					{
-						power.jumpAmount = rating;
-						powerStats.amount = rating;
+                        Instance.jumpAmount = rating;
+						//powerStats.amount = rating;
 					}
 				)
 			};

@@ -18,7 +18,7 @@ namespace PowerSystem.Powers
 
 		void Update()
 		{
-			if (!locked && Input.GetButtonDown(power.activationKey + character.playerID))
+			if (!locked && Input.GetButtonDown(powerInstance.activationKey + character.playerID))
 			{
 				Shoot();
 				StartCoroutine(Lock());
@@ -27,20 +27,20 @@ namespace PowerSystem.Powers
 
 		void Shoot()
 		{
-			Vector2 direction = GetFireDirection(power.direction);
+			Vector2 direction = GetFireDirection(powerInstance.direction);
 
 			GameObject beamInstance = Instantiate(beamPrefab);
 			beamInstance.transform.position = transform.position;
 			beamInstance.transform.SetParent(transform);
 
 			Beam beamController = beamInstance.GetComponent<Beam>();
-			beamController.Initialize(character, this, power.range, power.effect, direction);
+			beamController.Initialize(character, this, powerInstance.range, powerInstance.effect, direction);
 		}
 
 		IEnumerator Lock()
 		{
 			locked = true;
-			yield return new WaitForSeconds(power.rateOfFire);
+			yield return new WaitForSeconds(powerInstance.rateOfFire);
 			locked = false;
 		}
 	}
