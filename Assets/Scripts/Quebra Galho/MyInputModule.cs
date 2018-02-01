@@ -37,7 +37,7 @@ namespace Utilities
 					SendSubmitEventToSelectedObject();
 			}
 
-			ProcessMouseEvent();
+			//ProcessMouseEvent();
 		}
 
 		protected new bool SendSubmitEventToSelectedObject()

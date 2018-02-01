@@ -11,14 +11,26 @@ namespace PowerSystem
 		public Material ringMaterial;
 		public Sprite coreShape;
 
-
+        [SerializeField]
 		public static List<Material> neonMaterials = new List<Material>();
-		public int CoreMaterial { get { return neonMaterials.IndexOf(coreMaterial); } set { coreMaterial = neonMaterials[value]; core.GetComponent<Renderer>().material = coreMaterial; } }
-		public int RingMaterial { get { return neonMaterials.IndexOf(ringMaterial); } set { ringMaterial = neonMaterials[value]; ring.GetComponent<Renderer>().material = ringMaterial; } }
+		public int CoreMaterial
+        {
+            get { return neonMaterials.IndexOf(coreMaterial); }
+            set { if (neonMaterials.Count > value) { coreMaterial = neonMaterials[value]; core.GetComponent<Renderer>().material = coreMaterial; } }
+        }
+		public int RingMaterial 
+        {
+            get { return neonMaterials.IndexOf(ringMaterial); }
+            set { if (neonMaterials.Count > value) { ringMaterial = neonMaterials[value]; ring.GetComponent<Renderer>().material = ringMaterial; } }
+        }
 
 
 		public static List<Sprite> coreShapes = new List<Sprite>();
-		public int CoreShape { get { return coreShapes.IndexOf(coreShape); } set { coreShape = coreShapes[value]; core.GetComponent<SpriteRenderer>().sprite = coreShape; } }
+		public int CoreShape 
+        {
+            get { return coreShapes.IndexOf(coreShape); }
+            set { if (coreShapes.Count > value) { coreShape = coreShapes[value]; core.GetComponent<SpriteRenderer>().sprite = coreShape; } }
+        }
 
 		public float maxHealth;
 		public float curHealth;
@@ -36,35 +48,33 @@ namespace PowerSystem
 		private GameObject core;
 		private GameObject ring;
 
-		void Awake()
-		{
-			if (neonMaterials.Count == 0)
-			{
-				neonMaterials.Add((Material)Resources.Load("Materials/Glowing/Red", typeof(Material)));
-				neonMaterials.Add((Material)Resources.Load("Materials/Glowing/Green", typeof(Material)));
-				neonMaterials.Add((Material)Resources.Load("Materials/Glowing/Blue", typeof(Material)));
-				neonMaterials.Add((Material)Resources.Load("Materials/Glowing/Magenta", typeof(Material)));
-				neonMaterials.Add((Material)Resources.Load("Materials/Glowing/Cyan", typeof(Material)));
-				neonMaterials.Add((Material)Resources.Load("Materials/Glowing/Yellow", typeof(Material)));
-				neonMaterials.Add((Material)Resources.Load("Materials/Glowing/White", typeof(Material)));
+        public static void GetMaterials()
+        {
+            if (neonMaterials.Count == 0)
+            {
+                neonMaterials.Add((Material)Resources.Load("Materials/Glowing/Red", typeof(Material)));
+                neonMaterials.Add((Material)Resources.Load("Materials/Glowing/Green", typeof(Material)));
+                neonMaterials.Add((Material)Resources.Load("Materials/Glowing/Blue", typeof(Material)));
+                neonMaterials.Add((Material)Resources.Load("Materials/Glowing/Magenta", typeof(Material)));
+                neonMaterials.Add((Material)Resources.Load("Materials/Glowing/Cyan", typeof(Material)));
+                neonMaterials.Add((Material)Resources.Load("Materials/Glowing/Yellow", typeof(Material)));
+                neonMaterials.Add((Material)Resources.Load("Materials/Glowing/White", typeof(Material)));
 
-			}
+            }
 
-			if (coreShapes.Count == 0)
-			{
-				coreShapes.Add((Sprite)Resources.Load("Sprites/Diamond", typeof(Sprite)));
-				coreShapes.Add((Sprite)Resources.Load("Sprites/Hexagon", typeof(Sprite)));
-				coreShapes.Add((Sprite)Resources.Load("Sprites/Triangle", typeof(Sprite)));
-				coreShapes.Add((Sprite)Resources.Load("Sprites/Circle", typeof(Sprite)));
-				//coreShapes.Add((Sprite)Resources.Load("Sprites/Bunny.png", typeof(Sprite)));
-			}
-			//Debug.Log(neonMaterials);
-			//Debug.Log(neonMaterials.Count);
-			//foreach (object o in neonMaterials)
-			//{
-			//	Debug.Log(o);
-			//}
-		}
+            if (coreShapes.Count == 0)
+            {
+                coreShapes.Add((Sprite)Resources.Load("Sprites/Diamond", typeof(Sprite)));
+                coreShapes.Add((Sprite)Resources.Load("Sprites/Hexagon", typeof(Sprite)));
+                coreShapes.Add((Sprite)Resources.Load("Sprites/Triangle", typeof(Sprite)));
+                coreShapes.Add((Sprite)Resources.Load("Sprites/Circle", typeof(Sprite)));
+                //coreShapes.Add((Sprite)Resources.Load("Sprites/Bunny.png", typeof(Sprite)));
+            }
+        }
+
+		public void Awake()
+        {
+        }
 
 		// Use this for initialization
 		void Start()

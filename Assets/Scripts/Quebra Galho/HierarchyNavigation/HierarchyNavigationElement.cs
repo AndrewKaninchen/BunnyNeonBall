@@ -15,9 +15,21 @@ namespace Utilities
 		private EventSystem eventSystem;
 		private HierarchyNavigationGroup group;
 
-		public bool OverrideExitTarget { get { return overrideExitTarget; } set { overrideExitTarget = value; if(group != null) group.OrganizeHierarchyNavigation(); } }
-		public bool OverridePreviousTarget { get { return overridePreviousTarget; } set { overridePreviousTarget = value; if (group != null) group.OrganizeHierarchyNavigation(); } }
-		public bool OverrideNextTarget { get { return overrideNextTarget; } set { overrideNextTarget = value; if (group != null) group.OrganizeHierarchyNavigation(); } }
+		public bool OverrideExitTarget 
+        {
+            get { return overrideExitTarget; }
+            set { overrideExitTarget = value; if(group != null) group.OrganizeHierarchyNavigation(); }
+        }
+		public bool OverridePreviousTarget 
+        {
+            get { return overridePreviousTarget; }
+            set { overridePreviousTarget = value; if (group != null) group.OrganizeHierarchyNavigation(); }
+        }
+		public bool OverrideNextTarget
+        {
+            get { return overrideNextTarget; }
+            set { overrideNextTarget = value; if (group != null) group.OrganizeHierarchyNavigation(); }
+        }
 
 
 		private bool overrideExitTarget = false;

@@ -9,7 +9,8 @@ namespace PowerSystem.Powers
 
 		public RangedAttackBeamPowerCreator()
 		{
-			stats = new Stat[]
+            Instance = ScriptableObject.CreateInstance<RangedAttackBeamPower>();
+            stats = new Stat[]
 			{
 				new Stat<int>("Range", "How far the beam goes.", value => Instance.range = value),
 				new Stat<int>("Rate of Fire", "How fast you can fire the next beam.", value => Instance.rateOfFire = 1f/value),

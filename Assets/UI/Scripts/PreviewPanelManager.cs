@@ -32,7 +32,9 @@ namespace PowerSystem.UI
 			previewCamera.targetTexture = previewTexture;
 			previewImage.GetComponentInChildren<RawImage>().texture = previewTexture;
             Character = Instantiate(characterPrefab, previewCamera.transform.position + new Vector3(0f, 0f, 50f), Quaternion.identity, transform).GetComponent<Character>();
-		}		
+
+            StartCoroutine(SetDropdownListeners());
+        }		
 
 		public void OnSubmit(BaseEventData eventData)
 		{
@@ -50,5 +52,20 @@ namespace PowerSystem.UI
 			previewCamera2.gameObject.SetActive(true);
 			looksPanel.SetActive(false);
 		}
+
+        private IEnumerator SetDropdownListeners()
+        {
+            Character.GetMaterials();
+
+            yield return new WaitForEndOfFrame();
+
+            coreMaterialDropdown.onValueChanged.AddListener(x => Character.CoreMaterial = x);
+            ringMaterialDropdown.onValueChanged.AddListener(x => Character.RingMaterial = x);
+            coreShapeDropDown.onValueChanged.AddListener(x => Character.CoreShape = x);
+
+            Character.CoreMaterial = 0;
+            Character.RingMaterial = 0;
+            Character.CoreShape = 0;
+        }
 	}
 }
