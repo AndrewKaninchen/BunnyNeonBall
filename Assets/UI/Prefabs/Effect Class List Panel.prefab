@@ -247,8 +247,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dda06492b7d6ad428a925ca66ab52ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  overrideExitTarget: 0
   exitTarget: {fileID: 0}
+  previousTarget: {fileID: 0}
+  nextTarget: {fileID: 0}
 --- !u!114 &114553156642867830
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -267,6 +268,7 @@ MonoBehaviour:
   m_PreferredHeight: -1
   m_FlexibleWidth: -1
   m_FlexibleHeight: 1
+  m_LayoutPriority: 1
 --- !u!114 &114953817258821250
 MonoBehaviour:
   m_ObjectHideFlags: 1

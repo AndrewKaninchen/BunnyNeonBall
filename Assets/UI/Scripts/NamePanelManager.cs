@@ -10,7 +10,7 @@ namespace PowerSystem.UI
 	{
 		public void Initialize(CharacterPanelManager characterPanelManager)
 		{
-			GetComponentInChildren<Text>().text = "P" +  characterPanelManager.playerID + " - Character Name";			
+         	GetComponentInChildren<Text>().text = "P" +  characterPanelManager.playerID + " - Character Name";			
 		}
 	}
 }

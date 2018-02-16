@@ -12,7 +12,7 @@ namespace PowerSystem.UI
 			DrawDefaultInspector();
 
 			CharacterPanelManager myScript = (CharacterPanelManager)target;
-			if (!myScript.isInitialized && GUILayout.Button("Initialize"))
+			if (!myScript.IsInitialized && GUILayout.Button("Initialize"))
 			{
 				myScript.Initialize(myScript.playerID);
 			}

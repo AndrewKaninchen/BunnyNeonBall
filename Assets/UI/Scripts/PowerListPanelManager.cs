@@ -19,8 +19,7 @@ namespace PowerSystem.UI
 		private GameObject addNewPowerPanel;
 
 		public List<GameObject> powerPanels;
-		[SerializeField]private GameObject powerPanelPrefab;
-		[SerializeField]private GameObject addNewPowerPanelPrefab;
+		[SerializeField]private GameObject powerPanelTemplate;
 
 		private ScrollRect scrollRect;
 
@@ -29,7 +28,6 @@ namespace PowerSystem.UI
 			this.characterPanelManager = characterPanelManager;
 			eventSystem = characterPanelManager.eventSystem;
 			
-			addNewPowerPanel = Instantiate(addNewPowerPanelPrefab);
 			addNewPowerPanel.transform.SetParent(transform.GetChild(0)); //Bug maroto que faz o treco não aparecer me forçou a usar o jeito errado		
 
 			addNewPowerPanel.GetComponent<AddNewPowerPanelManager>().Initialize(this, characterPanelManager);
@@ -39,7 +37,7 @@ namespace PowerSystem.UI
 		
 		public GameObject AddPower(PowerCreator powerCreator)
 		{
-			GameObject g = Instantiate(powerPanelPrefab);
+			GameObject g = Instantiate(powerPanelTemplate);
 			g.transform.SetParent(transform.GetChild(0));
 
 			g.GetComponent<PowerPanelManager>().Initialize(powerCreator, this);
